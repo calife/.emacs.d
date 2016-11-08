@@ -1,0 +1,9 @@
+puts "Hello"
+
+3.times { | x |
+  puts "### #{x+1}" 
+  system "date"
+  puts "###" 
+}
+
+puts "Leave"

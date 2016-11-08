@@ -1,0 +1,16 @@
+;;; -*- coding: utf-8 -*-
+(("/home/mpucci/"
+  (dired-filename . "/home/mpucci/.emacs.d"))
+ ("/home/mpucci/.emacs.d/backup/"
+  (dired-filename . "/home/mpucci/.emacs.d/backup/00-my-common-setup.el.bak"))
+ ("/home/mpucci/.emacs.d/recentf" . 683)
+ ("/home/mpucci/.emacs.d/"
+  (dired-filename . "/home/mpucci/.emacs.d/backup"))
+ ("/home/mpucci/.emacs.d/README.md" . 400)
+ ("/home/mpucci/.emacs.d/my-custom/"
+  (dired-filename . "/home/mpucci/.emacs.d/my-custom/00-my-common-setup.el"))
+ ("/home/mpucci/.emacs.d/other-parts/elpa/dash-20161108.352/dash-autoloads.el" . 220)
+ ("/home/mpucci/.emacs.d/other-parts/elpa/helm-core-20161108.321/helm-core-autoloads.el" . 6043)
+ ("/home/mpucci/code/"
+  (dired-filename . "/home/mpucci/code/some.rb"))
+ ("/home/mpucci/code/test1.rb" . 124))
