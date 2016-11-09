@@ -51,3 +51,10 @@
 (global-set-key (kbd "S-<left>") (lambda () (interactive) (shrink-window-horizontally 5)))
 (global-set-key (kbd "S-<right>") (lambda () (interactive) (enlarge-window-horizontally 5)))
 
+;; Multi window layout
+(global-set-key (kbd "<M-C-prior>" ) 'scroll-other-window-up)
+(global-set-key (kbd "<M-C-next>" ) 'scroll-other-window-down)
+
+; Cycle throw windows
+(global-set-key [C-tab] (lambda () (interactive) (other-window +1)))
+(global-set-key [S-iso-lefttab] (lambda () (interactive) (other-window -1)))

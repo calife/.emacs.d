@@ -1,13 +1,19 @@
 ;;; -*- coding: utf-8 -*-
-(("/home/mpucci/.emacs.d/init.el" . 9911)
- ("/home/mpucci/.emacs.d/recentf" . 1561)
+(("/home/mpucci/.emacs.d/recentf" . 1648)
+ ("/home/mpucci/code/test.java" . 1101)
+ ("/home/mpucci/.emacs.d/eclipse-theme.el" . 3857)
+ ("/home/mpucci/.emacs.d/init.el" . 8807)
+ ("/home/mpucci/.emacs.d/my-custom/themes/eclipse-theme.el" . 3878)
  ("/home/mpucci/"
   (dired-filename . "/home/mpucci/.emacs.d"))
+ ("/home/mpucci/.emacs.d/my-custom/04-my-custom-keys.el" . 2083)
  ("/home/mpucci/.emacs.d/"
   (dired-filename . "/home/mpucci/.emacs.d/init.el"))
- ("/home/mpucci/.emacs.d/my-custom/themes/eclipse-theme.el" . 954)
+ ("/home/mpucci/.emacs.d/my-custom/02-my-custom-commands.el" . 9413)
  ("/home/mpucci/.emacs.d/my-custom/"
-  (dired-filename . "/home/mpucci/.emacs.d/my-custom/themes"))
+  (dired-filename . "/home/mpucci/.emacs.d/my-custom/04-my-custom-keys.el"))
+ ("/home/mpucci/code/"
+  (dired-filename . "/home/mpucci/code/some.rb"))
  ("/home/mpucci/.emacs.d/my-custom/themes/"
   (dired-filename . "/home/mpucci/.emacs.d/my-custom/themes/eclipse-theme.el"))
  ("/home/mpucci/.emacs.d/README.md" . 799)
@@ -21,8 +27,6 @@
  ("/home/mpucci/.emacs.d/my-custom/06-helm-setup.el" . 1082)
  ("/home/mpucci/.emacs.d/backup/"
   (dired-filename . "/home/mpucci/.emacs.d/backup/.."))
- ("/home/mpucci/code/"
-  (dired-filename . "/home/mpucci/code/some.rb"))
  ("/home/mpucci/.emacs.d/other-parts/elpa/dash-20161108.352/dash-autoloads.el" . 220)
  ("/home/mpucci/.emacs.d/other-parts/elpa/helm-core-20161108.321/helm-core-autoloads.el" . 6043)
  ("/home/mpucci/code/test1.rb" . 124))

@@ -290,6 +290,20 @@
 ;;  Fine Fullscreen mode
 ;;
 
+
+;; Scroll other window shortcut
+(defun scroll-other-window-up ()
+  "Scroll the other window one line up."
+  (interactive)
+  (scroll-other-window -1)
+  )
+
+(defun scroll-other-window-down ()
+  "Scroll the other window one line down."
+  (interactive)
+  (scroll-other-window 1)
+  )
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                             End custom functions
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
