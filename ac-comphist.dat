@@ -1,4 +1,8 @@
-((("califerno" .
+((("exit" .
+   [1 0 0 0])
+  ("system" .
+   [2 0 0 0 0 0])
+  ("califerno" .
    [1 0 0 0 0 0 0 0 0])
   ("my-color-theme-light" .
    [2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])

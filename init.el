@@ -269,5 +269,10 @@
 ;; Disable menu bar
 (menu-bar-mode -1)
 
+(require 'hl-line+)
+(global-hl-line-mode)
+
 ;; (califerno-color-theme-light)
 (require 'eclipse-theme)
+
+
