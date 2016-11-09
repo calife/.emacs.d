@@ -1,6 +1,5 @@
 ;;; -*- coding: utf-8 -*-
-(("/home/mpucci/.emacs.d/README.md" . 2)
- ("/home/mpucci/.emacs.d/recentf" . 683)
+(("/home/mpucci/.emacs.d/recentf" . 683)
  ("/home/mpucci/.emacs.d/"
   (dired-filename . "/home/mpucci/.emacs.d/README.md"))
  ("/home/mpucci/code/"
