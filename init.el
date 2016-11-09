@@ -264,7 +264,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(mode-line ((t (:background "white" :foreground "black" :box (:line-width 1 :color "black" :style released-button)))))
- '(region ((t (:background "#3D8CFF" :foreground "#ffffff")))))
+ '(region ((t (:background "#3D8CFF" :foreground "#ffffff"))))
+ )
 
 ;; Disable menu bar
 (menu-bar-mode -1)

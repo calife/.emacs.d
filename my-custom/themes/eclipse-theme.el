@@ -97,6 +97,7 @@
             (mode-line-inactive :foreground "grey20" :background "grey90" :box nil)
             (minibuffer-prompt :foreground "medium blue")
             (hl-line :background "snow1")
+
             ;; defaults
             (mode-line-buffer-id)
             (show-paren-match :background "turquoise")

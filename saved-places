@@ -1,9 +1,10 @@
 ;;; -*- coding: utf-8 -*-
-(("/home/mpucci/code/test.java" . 2869)
+(("/home/mpucci/.emacs.d/my-custom/themes/eclipse-theme.el" . 3506)
+ ("/home/mpucci/.emacs.d/init.el" . 738)
  ("/home/mpucci/.emacs.d/recentf" . 1649)
+ ("/home/mpucci/code/test.java" . 59570)
  ("/home/mpucci/.emacs.d/"
   (dired-filename . "/home/mpucci/.emacs.d/init.el"))
- ("/home/mpucci/.emacs.d/my-custom/themes/eclipse-theme.el" . 4685)
  ("/home/mpucci/.emacs.d/my-custom/"
   (dired-filename . "/home/mpucci/.emacs.d/my-custom/themes"))
  ("/home/mpucci/.emacs.d/my-custom/themes/"
