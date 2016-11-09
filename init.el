@@ -276,4 +276,5 @@
 ;; (califerno-color-theme-light)
 (require 'eclipse-theme)
 
-
+;; Navigate between windows using Alt-1, Alt-2, Shift-left, shift-up, shift-right
+ (windmove-default-keybindings)
