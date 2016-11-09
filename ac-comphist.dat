@@ -1,4 +1,10 @@
-((("nil" .
+((("califerno" .
+   [1 0 0 0 0 0 0 0 0])
+  ("my-color-theme-light" .
+   [2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("color-theme-install" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("nil" .
    [1 0 0])
   ("setq" .
    [1 0 0 0])
@@ -19,4 +25,20 @@
   ("end" .
    [1 0 0])
   ("true=false" .
-   [0 0 0 0 0 1 0 0 0 0])))
+   [0 0 0 0 0 1 0 0 0 0])
+  ("califerno-dark" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("load-library" .
+   [0 0 0 0 0 0 0 1 0 0 0 0])
+  ("require" .
+   [2 0 0 0 0 0 0])
+  ("color-theme" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("califerno-dark-install" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 1 0 0 0])
+  ("my-color-theme" .
+   [0 0 0 0 0 0 0 3 0 0 0 0 0 0])
+  ("califerno-color-theme-dark" .
+   [2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("eclipse-theme" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0])))

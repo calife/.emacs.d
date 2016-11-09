@@ -25,6 +25,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/other-parts/")
 (add-to-list 'load-path "~/.emacs.d/my-custom/")
+(add-to-list 'load-path "~/.emacs.d/my-custom/themes/")
 
 (load-library "00-my-common-setup")
 (load-library "01-my-package-setup")
@@ -33,6 +34,9 @@
 (load-library "04-my-custom-keys")
 (load-library "05-my-ruby-setup")
 (load-library "06-helm-setup")
+(load-library "califerno-dark-theme") ; (califerno-color-theme-dark)
+(load-library "califerno-light-theme") ; (califerno-color-theme-light)
+(load-library "eclipse-theme") ; (require 'eclipse-theme)
 
 ; Display date/time in the status bar
 (display-time)
@@ -44,16 +48,21 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(browse-url-browser-function (quote browse-url-firefox))
  '(calendar-christian-all-holidays-flag t)
  '(calendar-holiday-marker (quote holiday))
  '(calendar-mark-holidays-flag t)
  '(calendar-view-holidays-initially-flag t)
  '(column-number-mode t)
- '(custom-enabled-themes (quote (wombat)))
+ '(custom-enabled-themes (quote (whiteboard)))
  '(custom-safe-themes
    (quote
-	("4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" default)))
+	("2cbede7e0421e09d3fb6dfb497b3f22558e834fcb137811454fe701673cbdeb8" "9b9139bce6a11b9dadb5e4608534dbc2f272f604ab762a3318421ba53341b626" "4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" default)))
+ '(custom-theme-load-path
+   (quote
+	("/home/mpucci/.emacs.d/my-custom/themes/" t)))
  '(dired-find-subdir nil)
  '(display-time-mode t)
  '(explicit-shell-file-name "/bin/bash")
@@ -103,7 +112,7 @@
  '(vc-annotate-very-old-color "#DC8CC3")
  '(windmove-wrap-around t))
 
-(require 'color-theme)
+;; (require 'color-theme)
 
 (setq inhibit-splash-screen t)
 
@@ -180,13 +189,6 @@
 
 ;; Prima di salvare remove trailing whitespace
 ;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-
-; Navigazione in stile camelCase
-;; (load "camelCase-mode.el")
-;; (add-hook 'java-mode-hook '(lambda () (camelCase-mode 1)))
-;; (add-hook 'find-file-hooks '(lambda () (camelCase-mode 1)))
-;; (add-hook 'post-command-hook '(lambda () (camelCase-mode 1)))
 
 (put 'narrow-to-region 'disabled nil)
 
@@ -277,7 +279,7 @@
 (add-hook 'html-mode-hook (lambda () (rainbow-mode 1)))
 (add-hook 'help-mode-hook (lambda () (rainbow-mode 1)))
 
-(load-theme 'wombat t)
+;; (load-theme 'wombat t)
 
 (setq x-select-enable-clipboard-manager nil)
 
@@ -301,3 +303,6 @@
 
 ;; Disable menu bar
 (menu-bar-mode -1)
+
+;; (califerno-color-theme-light)
+(require 'eclipse-theme)
