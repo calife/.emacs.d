@@ -96,9 +96,12 @@
             (mode-line :foreground "black" :background "#f9b593" :box nil)
             (mode-line-inactive :foreground "grey20" :background "grey90" :box nil)
             (minibuffer-prompt :foreground "medium blue")
-            (hl-line :background "LightCyan2")
+            ;; (hl-line :background "LightCyan2")
 			(mode-line :background "white" :foreground "black" :box (:line-width 1 :color "black" :style released-button))
 			(region :background "#3D8CFF" :foreground "#ffffff")
+
+			(hl-line :background "azure")
+			(window-divider :foreground "DeepSkyBlue3")
 			
             ;; defaults
             (mode-line-buffer-id)

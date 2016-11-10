@@ -123,7 +123,7 @@
      (mode-line ((t (:background "#444444" :foreground "#f6f3e8" :box (:line-width 1 :style released-button)))))
      (mode-line-buffer-id ((t (:bold t :foreground "blue4" :weight bold))))
      (mode-line-emphasis ((t (:bold t :weight bold))))
-     (mode-line-highlight ((t (:box (:line-width 2 :color "grey40" :style released-button)))))
+     (mode-line-highlight ((t (:box (:line-width 2 :color "red" :style released-button)))))
      (mode-line-inactive ((t (:background "#444444" :foreground "#857b6f" :box (:line-width 1 :color "gray40" :style nil)))))
      (mouse ((t (nil))))
      (next-error ((t (:foreground "#f6f3e8" :background "#444444"))))
