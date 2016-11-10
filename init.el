@@ -143,7 +143,9 @@
 
 ;; Marcello - Window colors
 ;; =============
-(set-default-font	"-unknown-DejaVu Sans Mono-normal-normal-normal-*-11-*-*-*-m-0-iso10646-1" "keep-size")
+;; (set-default-font	"-unknown-DejaVu Sans Mono-normal-normal-normal-*-11-*-*-*-m-0-iso10646-1" "keep-size")
+(set-default-font	"-unknown-Inconsolata-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1")
+
 
 ;; Marcello - Line number minor mode
 (require 'linum)
@@ -263,18 +265,17 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(hl-line ((t (:background "LightCyan2"))))
  '(mode-line ((t (:background "white" :foreground "black" :box (:line-width 1 :color "black" :style released-button)))))
- '(region ((t (:background "#3D8CFF" :foreground "#ffffff"))))
- )
+ '(region ((t (:background "#3D8CFF" :foreground "#ffffff")))))
 
-;; Disable menu bar
+;; Disable menu bar and scroll bar
 (menu-bar-mode -1)
+(scroll-bar-mode -1)
+
 
 (require 'hl-line+)
 (global-hl-line-mode)
 
 ;; (califerno-color-theme-light)
 (require 'eclipse-theme)
-
-;; Navigate between windows using Alt-1, Alt-2, Shift-left, shift-up, shift-right
- (windmove-default-keybindings)

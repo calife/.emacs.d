@@ -116,4 +116,3 @@
 
 
 (add-hook 'ruby-mode-hook (lambda () (rainbow-mode 1)))
-
