@@ -1,20 +1,19 @@
 ;;; -*- coding: utf-8 -*-
-(("/home/mpucci/.emacs.d/"
-  (dired-filename . "/home/mpucci/.emacs.d/init.el"))
- ("/home/mpucci/.emacs.d/my-custom/01-my-custom-setup.el" . 4056)
- ("/home/mpucci/.emacs.d/recentf" . 1373)
- ("/home/mpucci/code/test.java" . 4204)
+(("/home/mpucci/code/test.java" . 60302)
  ("/home/mpucci/code/"
   (dired-filename . "/home/mpucci/code/.."))
  ("/home/mpucci/"
-  (dired-filename . "/home/mpucci/.emacs.d"))
- ("/home/mpucci/.emacs.d/my-custom/themes/eclipse-theme.el" . 6711)
+  (dired-filename . "/home/mpucci/code"))
+ ("/home/mpucci/.emacs.d/recentf" . 1373)
+ ("/home/mpucci/.emacs.d/my-custom/themes/califerno-dark-theme.el" . 14053)
+ ("/home/mpucci/.emacs.d/my-custom/themes/eclipse-theme.el" . 4697)
+ ("/home/mpucci/.emacs.d/"
+  (dired-filename . "/home/mpucci/.emacs.d/my-custom"))
+ ("/home/mpucci/.emacs.d/my-custom/01-my-custom-setup.el" . 2959)
  ("/home/mpucci/.emacs.d/my-custom/"
   (dired-filename . "/home/mpucci/.emacs.d/my-custom/themes"))
  ("/home/mpucci/.emacs.d/my-custom/themes/"
   (dired-filename . "/home/mpucci/.emacs.d/my-custom/themes/eclipse-theme.el"))
- ("/home/mpucci/.emacs.d/my-custom/themes/califerno-dark-theme.el" . 3057)
- ("/home/mpucci/code/some.rb" . 89)
  ("/home/mpucci/.emacs.d/my-custom/00-my-package-setup.el" . 488)
  ("/home/mpucci/.emacs.d/my-custom/04-my-custom-keys.el" . 2814)
  ("/home/mpucci/.emacs.d/my-custom/05-my-ruby-setup.el" . 3796)

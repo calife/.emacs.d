@@ -15,7 +15,7 @@
  '(custom-enabled-themes nil)
  '(custom-safe-themes
    (quote
-	("029bf246c7592f2a986532ac18db04b9a03706aea32af23a35bd7e994e6a2062" "2cbede7e0421e09d3fb6dfb497b3f22558e834fcb137811454fe701673cbdeb8" "9b9139bce6a11b9dadb5e4608534dbc2f272f604ab762a3318421ba53341b626" "4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" default)))
+	("592e8a674bbf9a2bf0d0d3cca17207fa3ab2e95d42db6ffd03e9789457e1147d" "029bf246c7592f2a986532ac18db04b9a03706aea32af23a35bd7e994e6a2062" "2cbede7e0421e09d3fb6dfb497b3f22558e834fcb137811454fe701673cbdeb8" "9b9139bce6a11b9dadb5e4608534dbc2f272f604ab762a3318421ba53341b626" "4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" default)))
  '(custom-theme-load-path (quote ("/home/mpucci/.emacs.d/my-custom/themes/" t)))
  '(dired-find-subdir nil)
  '(display-time-mode t)
@@ -71,8 +71,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; '(hl-line ((t (:background "azure"))))
- ;; '(window-divider ((t (:foreground "DeepSkyBlue3"))))
  )
 
 

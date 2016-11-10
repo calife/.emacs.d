@@ -175,6 +175,7 @@
      (variable-pitch ((t (:family "Sans Serif"))))
      (vertical-border ((t (nil))))
      (warning ((t (:foreground "Yellow4"))))
+	 (hl-line ((t (:background "gray12"))))
      (widget-button ((t (:bold t :weight bold))))
      (widget-button-pressed ((t (:foreground "red1"))))
      (widget-documentation ((t (:foreground "lime green"))))
