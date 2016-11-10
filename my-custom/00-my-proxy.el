@@ -7,4 +7,4 @@
 (setq url-http-proxy-basic-auth-storage
     (list (list "192.168.214.121:8080"
                 (cons "Input your PROXY UID !"
-                      (base64-encode-string "sky\\puccima:Settembre2016#")))))
+                      (base64-encode-string "domain\username:userpasswd")))))
