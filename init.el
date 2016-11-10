@@ -27,8 +27,8 @@
 (add-to-list 'load-path "~/.emacs.d/my-custom/")
 (add-to-list 'load-path "~/.emacs.d/my-custom/themes/")
 
-(load-library "00-my-common-setup")
-(load-library "01-my-package-setup")
+(load-library "00-my-package-setup")
+(load-library "01-my-common-setup")
 (load-library "02-my-custom-commands")
 (load-library "03-my-ibuffer-setup")
 (load-library "04-my-custom-keys")
@@ -71,7 +71,7 @@
  '(ibuffer-modified-char 77)
  '(max-lisp-eval-depth 32000)
  '(max-specpdl-size 32000)
- '(menu-bar-mode t)
+ '(menu-bar-mode nil)
  '(nrepl-message-colors
    (quote
 	("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
@@ -123,12 +123,10 @@
   )
 
 ;; Aggiustamenti per mouse e scroll
-;; shift + click select region, permette di selezionare regions tenendo premuto Shift + mouse1
-(define-key global-map (kbd "<S-down-mouse-1>") 'ignore) ; turn off font dialog
-(define-key global-map (kbd "<S-mouse-1>") 'mouse-set-point)
+
 
 ;; scroll one line at a time (less "jumpy" than defaults)
-(set-scroll-bar-mode 'right)
+;; (set-scroll-bar-mode 'right)
 ;(setq mouse-wheel-scroll-amount '(2 ((shift) . 2))) ;; one line at a time
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
@@ -145,12 +143,6 @@
 ;; =============
 ;; (set-default-font	"-unknown-DejaVu Sans Mono-normal-normal-normal-*-11-*-*-*-m-0-iso10646-1" "keep-size")
 (set-default-font	"-unknown-Inconsolata-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1")
-
-
-;; Marcello - Line number minor mode
-(require 'linum)
-(global-linum-mode)
-(line-number-mode 1) ; abilita il line number mode
 
 ; You can replace the region just by typing text, and kill the selected text just by hitting the Backspace key (‘DEL’).
 (transient-mark-mode 1) ; highlight text selection
@@ -194,36 +186,6 @@
 (setq x-select-enable-clipboard t)
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
-;; Inizio impostazioni Bookmark
-(setq
-  bookmark-default-file "~/.emacs.d/bookmarks" ;; keep my ~/ clean
-  bookmark-save-flag 1)                        ;; autosave each change)
-
-
-;; Shells
-(global-set-key [f12]
-				'(lambda ()
-				   (interactive)
-				   (ansi-term "/bin/bash")))
-
-(require 'multi-term)
-(setq multi-term-program "/bin/bash")
-
-(setq-default truncate-lines t)
-
-(define-key global-map [(C down-mouse-1)] nil)
-(define-key global-map [(C mouse-1)] 'my-search)
-
-;; Salva la posizione del cursore per ciascun file aperto
-(require 'saveplace)
-(setq-default save-place t)
-(setq save-place-file "~/.emacs.d/saved-places")
-
-(require 'recentf)
-(recentf-mode 1)
-(global-set-key "\C-c\C-r" 'recentf-open-files)
-
-
 ;; Auto complete mode
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories   "~/.emacs.d/other-parts/elpa/auto-complete-20150408.1132/dict")
@@ -265,18 +227,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; '(hl-line ((t (:background "LightCyan2"))))
- ;; '(mode-line ((t (:background "white" :foreground "black" :box (:line-width 1 :color "black" :style released-button)))))
- ;; '(region ((t (:background "#3D8CFF" :foreground "#ffffff"))))
  )
 
-;; Disable menu bar and scroll bar
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
 
-
-(require 'hl-line+)
-(global-hl-line-mode)
-
-;; (califerno-color-theme-light)
-(require 'eclipse-theme)

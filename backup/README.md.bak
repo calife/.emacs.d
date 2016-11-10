@@ -1,8 +1,0 @@
-<!-- Deploy -->
-<!-- Tuesday, 08. November 2016 -->
-
-1- Install emacs
-2- Download via git into .emacs.d folder
-3- Remove or backup any previous ~/.emacs file
-4- Run emacs
-

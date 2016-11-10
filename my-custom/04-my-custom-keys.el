@@ -58,3 +58,16 @@
 ; Cycle throw windows
 (global-set-key [C-tab] (lambda () (interactive) (other-window +1)))
 (global-set-key [S-iso-lefttab] (lambda () (interactive) (other-window -1)))
+
+;; Shells
+(global-set-key [f12]
+				'(lambda ()
+				   (interactive)
+				   (ansi-term "/bin/bash")))
+
+(define-key global-map [(C down-mouse-1)] nil)
+(define-key global-map [(C mouse-1)] 'my-search)
+
+;; shift + click select region, permette di selezionare regions tenendo premuto Shift + mouse1
+(define-key global-map (kbd "<S-down-mouse-1>") 'ignore) ; turn off font dialog
+(define-key global-map (kbd "<S-mouse-1>") 'mouse-set-point)

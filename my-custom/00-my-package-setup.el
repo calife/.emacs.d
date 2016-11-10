@@ -11,4 +11,12 @@
                 (cons "Input your PROXY UID !"
                       (base64-encode-string "sky\\puccima:Settembre2016#")))))
 
-(setq initial-scratch-message "") 
+(require 'package)
+(setq package-user-dir
+      (expand-file-name "elpa" "~/.emacs.d/other-parts/"))
+
+(add-to-list 'package-archives
+			 '("melpa" .
+			   "http://melpa.milkbox.net/packages/") t)
+
+(package-initialize)
