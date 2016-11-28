@@ -41,4 +41,3 @@
 (load-library "califerno-dark-theme") ; (califerno-color-theme-dark)
 (load-library "califerno-light-theme") ; (califerno-color-theme-light)
 (load-library "eclipse-theme") ; (require 'eclipse-theme)
-
