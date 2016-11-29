@@ -35,7 +35,7 @@
 (load-library "04-my-ibuffer")
 (load-library "05-my-keys")
 (load-library "06-my-projectile")
-;; (load-library "06-my-ruby")
+(load-library "06-my-ruby")
 ;; (load-library "07-my-helm")
 (load-library "08-my-development.el")
 (load-library "califerno-dark-theme") ; (califerno-color-theme-dark)
