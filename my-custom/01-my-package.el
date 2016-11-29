@@ -9,4 +9,12 @@
 			 '("melpa" .
 			   "http://melpa.milkbox.net/packages/") t)
 
+(add-to-list 'package-archives
+			 '("melpa" .
+			   "http://stable.melpa.org/packages/") t)
+
 (package-initialize)
+
+
+;; (require 'cask "~/.cask/cask.el")
+;; (cask-initialize)
