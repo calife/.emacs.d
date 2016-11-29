@@ -42,9 +42,9 @@
   (sp-local-pair "<" ">")
   (sp-local-pair "<%" "%>"))
 
-;; Miscellaneous
-;; (require 'ruby-tools)
-;; (add-hook 'ruby-mode-hook 'ruby-tools-mode)
+;; Miscellaneous, C-' , C-" , # , C-:
+(require 'ruby-tools)
+(add-hook 'ruby-mode-hook 'ruby-tools-mode)
 
 
 ;; (setq auto-mode-alist
