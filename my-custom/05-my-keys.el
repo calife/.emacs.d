@@ -43,7 +43,6 @@
 (global-set-key [C-next] "\M->")
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key "\M-g" 'goto-line)
-(global-set-key (kbd "<f2>") 'inf-ruby)
 
 ;; Frame sesize
 (global-set-key (kbd "S-<up>") (lambda () (interactive) (shrink-window 5)))

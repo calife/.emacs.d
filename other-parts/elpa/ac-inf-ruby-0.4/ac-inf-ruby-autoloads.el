@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "ac-inf-ruby" "ac-inf-ruby.el" (22589 24908
-;;;;;;  60000 0))
+;;;### (autoloads nil "ac-inf-ruby" "ac-inf-ruby.el" (22592 19413
+;;;;;;  200000 0))
 ;;; Generated autoloads from ac-inf-ruby.el
 
 (autoload 'ac-inf-ruby-enable "ac-inf-ruby" "\
