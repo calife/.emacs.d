@@ -1,8 +1,8 @@
 ;;;; Friday, 15. May 2015
 ;; https://github.com/howardabrams/dot-files/blob/master/emacs-ruby.org
 
-(unless (package-installed-p 'inf-ruby)
-  (package-install 'inf-ruby))
+;; (unless (package-installed-p 'inf-ruby)
+;;   (package-install 'inf-ruby))
 
 (setq auto-mode-alist
 	  (append '(("\\.rb\\'"    . ruby-mode)
@@ -21,8 +21,8 @@
 ;; ;; rvm.el
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'rvm)
-;; (rvm-use-default) ;; use rvm's default ruby for the current Emacs session
-(rvm-use (rvm--ruby-default) rvm--gemset-default)
+(rvm-use-default) ;; use rvm's default ruby for the current Emacs session
+;; (rvm-use (rvm--ruby-default) rvm--gemset-default)
 (global-set-key (kbd "C-c r a") 'rvm-activate-corresponding-ruby)
 
 
@@ -43,13 +43,18 @@
 ;; Miscellaneous, C-' , C-" , # , C-:
 (require 'ruby-tools)
 
+; 2.4.0
 (autoload 'inf-ruby-minor-mode "inf-ruby" "Run an inferior Ruby process" t)
 (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
   (rvm-activate-corresponding-ruby))
 
+; 2.5.0
+;; (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
+
 (defun inf-ruby-keys ()
   "Set local key defs for inf-ruby in ruby-mode"
   (define-key ruby-mode-map (kbd "<f2>") 'run-ruby)
+  ;; (define-key ruby-mode-map (kbd "<f2>") 'inf-ruby-console-auto) ; 2.5.0 inf-ruby
   (define-key ruby-mode-map (kbd "<f5>") 'ruby-send-region)
   (define-key ruby-mode-map (kbd "<f8>") 'ruby-load-file))
 
@@ -73,6 +78,7 @@
 			 (ruby-tools-mode)
 			 (rainbow-mode)
 			 (flymake-ruby-load)
-			 ;;   (ac-inf-ruby-enable)
+			 (ac-inf-ruby-enable)
+			 (package-initialize)
 			 (message "Leave ruby hooks")
 			 ))
