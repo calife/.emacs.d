@@ -23,7 +23,7 @@
 (require 'rvm)
 (rvm-use-default) ;; use rvm's default ruby for the current Emacs session
 ;; (rvm-use (rvm--ruby-default) rvm--gemset-default)
-(global-set-key (kbd "C-c r a") 'rvm-activate-corresponding-ruby)
+;; (global-set-key (kbd "C-c r a") 'rvm-activate-corresponding-ruby)
 
 
 ;; ;; Syntax Checking
@@ -79,6 +79,14 @@
 			 (rainbow-mode)
 			 (flymake-ruby-load)
 			 (ac-inf-ruby-enable)
+			 (robe-mode)
 			 (package-initialize)
 			 (message "Leave ruby hooks")
 			 ))
+
+
+;;
+;; Robe key bindings
+;; M-.  =>  robe jump
+;; C-c C-d => robe doc
+;;
