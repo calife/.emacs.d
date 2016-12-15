@@ -96,6 +96,17 @@
 
 ;;
 ;; Robe key bindings
-;; M-.  =>  robe jump
-;; C-c C-d => robe doc
+
 ;;
+
+(defun robe-print-keys ()
+  "Print the robe keys"
+  (interactive)
+  (switch-to-buffer "*ROBE KEYS*")
+  (erase-buffer)
+  (insert (format "Robe keybindings.\n"))
+  (insert (format "%S\n" "M-.  =>  robe jump"))
+  (insert (format "%S\n" "M-,  =>  robe back"))
+  (insert (format "%S\n" "C-M-i  =>  robe complete methods"))
+  (insert (format "%S\n" "C-c C-d => robe doc"))
+  (beginning-of-buffer))
