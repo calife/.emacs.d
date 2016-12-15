@@ -65,6 +65,15 @@
 (eval-after-load 'auto-complete
   '(add-to-list 'ac-modes 'inf-ruby-mode)  )
 
+;; (setq ac-auto-start t)
+;; (add-hook 'robe-mode-hook
+;;           (lambda ()
+;;             (add-to-list 'ac-sources 'ac-source-robe)
+;;             (setq completion-at-point-functions '(auto-complete))))
+
+;; (add-hook 'robe-mode-hook 'ac-robe-setup)
+
+
 ;; ;Optionally bind auto-complete to TAB in inf-ruby buffers:
 (eval-after-load 'inf-ruby '
   '(define-key inf-ruby-mode-map (kbd "TAB") 'auto-complete))
