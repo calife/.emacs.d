@@ -43,17 +43,10 @@
 ;; Miscellaneous, C-' , C-" , # , C-:
 (require 'ruby-tools)
 
-; 2.4.0
-(autoload 'inf-ruby-minor-mode "inf-ruby" "Run an inferior Ruby process" t)
-(defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
-  (rvm-activate-corresponding-ruby))
-
-; 2.5.0
-;; (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
-
 (defun inf-ruby-keys ()
   "Set local key defs for inf-ruby in ruby-mode"
-  (define-key ruby-mode-map (kbd "<f2>") 'run-ruby)
+  ;; (define-key ruby-mode-map (kbd "<f2>") 'run-ruby)
+  (define-key ruby-mode-map (kbd "<f2>") 'inf-ruby)
   ;; (define-key ruby-mode-map (kbd "<f2>") 'inf-ruby-console-auto) ; 2.5.0 inf-ruby
   (define-key ruby-mode-map (kbd "<f5>") 'ruby-send-region)
   (define-key ruby-mode-map (kbd "<f8>") 'ruby-load-file))
@@ -64,15 +57,6 @@
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (eval-after-load 'auto-complete
   '(add-to-list 'ac-modes 'inf-ruby-mode)  )
-
-;; (setq ac-auto-start t)
-;; (add-hook 'robe-mode-hook
-;;           (lambda ()
-;;             (add-to-list 'ac-sources 'ac-source-robe)
-;;             (setq completion-at-point-functions '(auto-complete))))
-
-;; (add-hook 'robe-mode-hook 'ac-robe-setup)
-
 
 ;; ;Optionally bind auto-complete to TAB in inf-ruby buffers:
 (eval-after-load 'inf-ruby '
@@ -87,19 +71,22 @@
 			 (ruby-tools-mode)
 			 (rainbow-mode)
 			 (flymake-ruby-load)
-			 (ac-inf-ruby-enable)
+			 ;; (ac-inf-ruby-enable)
 			 (robe-mode)
 			 (package-initialize)
 			 (message "Leave ruby hooks")
 			 ))
 
+(add-hook 'compilation-filter-hook 'inf-ruby-auto-enter)
+
+(eval-after-load 'inf-ruby
+  '(define-key inf-ruby-minor-mode-map
+	 (kbd "C-c C-s") 'inf-ruby-console-auto))
+
 
 ;;
 ;; Robe key bindings
-
-;;
-
-(defun robe-print-keys ()
+(defun print-keys-robe ()
   "Print the robe keys"
   (interactive)
   (switch-to-buffer "*ROBE KEYS*")
@@ -110,3 +97,4 @@
   (insert (format "%S\n" "C-M-i  =>  robe complete methods"))
   (insert (format "%S\n" "C-c C-d => robe doc"))
   (beginning-of-buffer))
+
