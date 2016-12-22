@@ -6,7 +6,7 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
- '(browse-url-browser-function (quote browse-url-firefox))
+ '(browse-url-browser-function (quote browse-url-w3))
  '(calendar-christian-all-holidays-flag t)
  '(calendar-holiday-marker (quote holiday))
  '(calendar-mark-holidays-flag t)
