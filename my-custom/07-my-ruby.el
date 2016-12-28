@@ -45,9 +45,7 @@
 
 (defun inf-ruby-keys ()
   "Set local key defs for inf-ruby in ruby-mode"
-  ;; (define-key ruby-mode-map (kbd "<f2>") 'run-ruby)
   (define-key ruby-mode-map (kbd "<f2>") 'inf-ruby)
-  ;; (define-key ruby-mode-map (kbd "<f2>") 'inf-ruby-console-auto) ; 2.5.0 inf-ruby
   (define-key ruby-mode-map (kbd "<f5>") 'ruby-send-region)
   (define-key ruby-mode-map (kbd "<f8>") 'ruby-load-file))
 
@@ -86,7 +84,7 @@
 
 ;;
 ;; Robe key bindings
-(defun print-keys-robe ()
+(defun keyprint-ruby ()
   "Print the robe keys"
   (interactive)
   (switch-to-buffer "*ROBE KEYS*")
