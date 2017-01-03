@@ -11,7 +11,7 @@
 
 (add-to-list 'package-archives
 			 '("melpa" .
-			   "http://melpa.org/packages/") t)
+			   "http://pmelpa.org/packages/") t)
 
 (package-initialize)
 
