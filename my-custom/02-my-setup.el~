@@ -217,21 +217,34 @@
 
 
 (if *win32*
-	;; cygwin setup under windows
+	;; 	(progn
+	;; 	  (setq cygwin-mount-cygwin-bin-directory "c:/cygwin64/bin")
+	;; 	  (setenv "PATH"		   
+	;; 			  "C:/cygwin64/usr/local/bin" ";"
+	;; 			  (concat
+	;; 			   "C:/cygwin64/bin" ";"
+	;; 			   "C:/cygwin64/usr/bin" ";"
+	;; 			   "C:/cygwin64/sbin" ";"
+	;; 			   (getenv "PATH")))
+	;; 	  (require 'setup-cygwin)
 	(progn
 	  (setq cygwin-mount-cygwin-bin-directory "c:/cygwin64/bin")
 	  (require 'setup-cygwin)
 	  (require 'cygwin-mount)
 	  (cygwin-mount-activate)
 
-	  (setenv "PATH"
-			  (concat
-			   "/usr/local/bin" ";"
-			   "/usr/bin" ";"
-			   "/bin" ";"
-			   "/sbin" ";"
-			   "/usr/sbin" ";"		   
-			   (getenv "PATH") ";" ))))
+	  (setenv "path"
+			  (getenv "PATH")
+
+	  ;; (setenv "PATH"		   
+	  ;; 		  "C:/cygwin64/usr/local/bin" ";"
+	  ;; 		  (concat
+	  ;; 		   "C:/cygwin64/bin" ";"
+	  ;; 		   "C:/cygwin64/usr/bin" ";"
+	  ;; 		   "C:/cygwin64/sbin" ";"
+	  ;; 		   (getenv "PATH")))
+	  )
+  )
 
 
 ;; (defun my-shell-setup ()
@@ -246,8 +259,32 @@
 ;; When running in Windows, we want to use an alternate shell so we
 ;; can be more unixy.
 
+(defun my-shell-setup ()
+  
+  "For Cygwin bash under Emacs"
 
-(require 'fakecygpty)
-(fakecygpty-activate)
+  (setq binary-process-input t) 
+  (setq w32-quote-process-args ?\")
+  (setq comint-scroll-show-maximum-output 'this)
+  (make-variable-buffer-local 'comint-completion-addsuffix)
+  (setq comint-completion-addsuffix t)
+  ;; (setq comint-process-echoes t) ;; reported that this is no longer needed
+  (setq comint-eol-on-send t)
+  (setq w32-quote-process-args ?\")
 
+  (setq shell-file-name "C:/cygwin64/bin/bash.exe")
+  (setq explicit-shell-file-name shell-file-name)
+  (setq explicit-sh-args '("-login" "--init-file" "~/.bash_profile" "-i"))
+  (setq explicit-bash-args '("--noediting" "--init-file" "~/.bash_profile"  "-i"))
+  (ansi-color-for-comint-mode-on)
+  (setenv "SHELL" shell-file-name)
+  (setenv "PATH"
+  		  (concat ".:/usr/local/bin:C:/cygwin64/bin:/bin:"
+  				  (replace-regexp-in-string " " "\\\\ "
+  											(replace-regexp-in-string "\\\\" "/"
+  																	  (replace-regexp-in-string "\\([A-Za-z]\\):" "/\\1"
+  																								(getenv "PATH"))))))
+)
 
+(require 'shell)
+(add-hook 'shell-mode-hook 'my-shell-setup)
