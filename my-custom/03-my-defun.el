@@ -36,8 +36,8 @@
       (replace-match (apply #'string
                             (nreverse (string-to-list (match-string 0)))))
       (forward-line))))
-
-(defun randomize-region (start end)
+									
+(defun randomize-region (start end) 
   "Randomly re-order the lines in the region."
   (interactive "r")
   (save-excursion
@@ -74,72 +74,29 @@
 ;; Inizio move text - M+Up/Down muove una riga o una regione in stile eclipse
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defun move-text-internal (arg)
-  (cond
-   ((and mark-active transient-mark-mode)
-    (if (> (point) (mark))
-        (exchange-point-and-mark))
-    (let ((column (current-column))
-          (text (delete-and-extract-region (point) (mark))))
-      (forward-line arg)
-      (move-to-column column t)
-      (set-mark (point))
-      (insert text)
-      (exchange-point-and-mark)
-      (setq deactivate-mark nil)))
-   (t
-    (let ((column (current-column)))
-      (beginning-of-line)
-      (when (or (> arg 0) (not (bobp)))
-        (forward-line)
-        (when (or (< arg 0) (not (eobp)))
-          (transpose-lines arg)
-          ;; Account for changes to transpose-lines in Emacs 24.3
-          (when (and (eval-when-compile
-                       (not (version-list-<
-                             (version-to-list emacs-version)
-                             '(24 3 50 0))))
-                     (< arg 0))
-            (forward-line -1)))
-        (forward-line -1))
-      (move-to-column column t)))))
+(defun calife-move-line-up ()
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2))
 
-;;;###autoload
-(defun move-text-down (arg)
-  "Move region (transient-mark-mode active) or current line
-  arg lines down."
-  (interactive "*p")
-  (move-text-internal arg))
-
-;;;###autoload
-(defun move-text-up (arg)
-  "Move region (transient-mark-mode active) or current line
-  arg lines up."
-  (interactive "*p")
-  (move-text-internal (- arg)))
-
-(global-set-key [M-down] 'move-text-down)
-(global-set-key [M-up] 'move-text-up)
+(defun calife-move-line-down ()
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Fine move text
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Cerca il testo selezionato nella directory corrente
-(defun grep-selected (start end)
+(defun calife-grep-selected (start end)
   (interactive "r")
-  (grep (concat "grep -nHR -e "
+  (message (buffer-substring start end))
+  (grep (concat "grep --color=always -nHR -e '"
                 (buffer-substring start end)
-                " * .*")))
-
-(global-set-key "\C-\M-g" 'grep-selected)
-
-;; Cerca il testo selezionato
-(defun find-selected (start end)
-  (interactive "r")
-  (find-dired (concat "find . -iname "
-                (buffer-substring start end)
-                " -ls ")))
+				"' . ")))
+                ;; " * .*")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Start Insert date
@@ -160,7 +117,7 @@
 		(system-time-locale "it_IT"))
 	(insert (format-time-string format))))
 
-(global-set-key (kbd "C-c d") 'insert-date)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End insert date
@@ -308,6 +265,48 @@
   (interactive)
   (scroll-other-window 1)
   )
+
+
+;;;;;;;;;;;;;;;;;;;;
+;; Start Linum setup
+;;;;;;;;;;;;;;;;;;;;
+
+(defvar *linum-mdown-line* nil)
+
+(defun line-at-click ()
+  (save-excursion
+	(let ((click-y (cdr (cdr (mouse-position))))
+		  (line-move-visual-store line-move-visual))
+	  (setq line-move-visual t)
+	  (goto-char (window-start))
+	  (next-line (1- click-y))
+	  (setq line-move-visual line-move-visual-store)
+	  ;; If you are using tabbar substitute the next line with
+	  ;; (line-number-at-pos))))
+	  (1+ (line-number-at-pos)))))
+
+(defun md-select-linum ()
+  (interactive)
+  (goto-line (line-at-click))
+  (set-mark (point))
+  (setq *linum-mdown-line*
+		(line-number-at-pos)))
+
+(defun mu-select-linum ()
+  (interactive)
+  (when *linum-mdown-line*
+	(let (mu-line)
+	  ;; (goto-line (line-at-click))
+	  (setq mu-line (line-at-click))
+	  (goto-line (max *linum-mdown-line* mu-line))
+	  (set-mark (line-end-position))
+	  (goto-line (min *linum-mdown-line* mu-line))
+	  (setq *linum-mdown*
+			nil))))
+
+;;;;;;;;;;;;;;;;;;;;
+;; End Linum setup
+;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                             End custom functions

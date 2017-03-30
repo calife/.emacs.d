@@ -9,7 +9,7 @@
     ;;  |  __/ | | | | | (_| | (__\__ \
     ;; (_)___|_| |_| |_|\__,_|\___|___/
     ;;
-    ;; This file is NOT part of GNU Emacs.
+    ;; This file is NOT part of GNU Emacs.k
     ;;; Commentary:
     ;;  Citations
     ;;

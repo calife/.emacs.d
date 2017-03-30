@@ -29,7 +29,6 @@
                ;; etc.; all your mail related modes
                ))))))
 
-(global-set-key (kbd "\C-x\C-b") 'ibuffer)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; End iBuffer

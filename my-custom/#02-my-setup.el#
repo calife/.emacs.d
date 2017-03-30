@@ -1,7 +1,0 @@
--*- mode: grep; default-directory: "~/.emacs.d/my-custom/" -*-
-Grep started at Wed Mar  1 15:22:34
-
-find . -type f -exec grep  -n '*w32*' {} NUL ";"
-Impossibile trovare il file - '*w32*'
-
-Grep exited abnormally with code 2 at Wed Mar  1 15:22:34
