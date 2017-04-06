@@ -18,8 +18,8 @@
 				   (if (y-or-n-p-with-timeout "Quit Emacs, are you sure ? " 4 nil)
 					   (save-buffers-kill-emacs))))
 
-(global-set-key (kbd "M-<up>") 'calife-move-line-up)
-(global-set-key (kbd "M-<down>") 'calife-move-line-down)
+;; (global-set-key (kbd "M-<up>") 'calife-move-line-up)
+;; (global-set-key (kbd "M-<down>") 'calife-move-line-down)
 
 ;; (global-set-key "\C-\M-g" 'calife-grep-selected)
 (global-set-key (kbd "C-S-f") 'calife-grep-selected)
@@ -155,7 +155,10 @@
     nil)
 
 (define-key global-map [(C down-mouse-1)] nil)
-(define-key global-map [(C mouse-1)] 'my-search)
+(define-key global-map [(C mouse-1)] 'my-search-forward)
+(define-key global-map [(C-S-mouse-1)] 'my-search-backward) ;; @TODO replace with my-search-backward
+
+
 
 ;; shift + click select region, permette di selezionare regions tenendo premuto Shift + mouse1
 (define-key global-map (kbd "<S-down-mouse-1>") 'ignore) ; turn off font dialog

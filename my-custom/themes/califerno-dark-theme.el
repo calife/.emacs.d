@@ -1,9 +1,9 @@
 (eval-when-compile    (require 'color-theme))
-(defun califerno-color-theme-dark ()
+(defun color-theme-califerno-dark ()
   "Color theme by mpucci, created 2016-11-09."
   (interactive)
   (color-theme-install
-   '(califerno-color-theme-dark
+   '(color-theme-califerno-dark
      ((background-color . "#242424")
       (background-mode . dark)
       (border-color . "black")
@@ -187,4 +187,4 @@
      (window-divider-last-pixel ((t (:foreground "gray40"))))
      (yas--field-debug-face ((t (nil))))
      (yas-field-highlight-face ((t (:foreground "#f6f3e8" :background "#444444")))))))
-(add-to-list 'color-themes '(califerno-color-theme-dark  "califerno-dark" "Marcello Pucci califerno@gmail.com"))
+(add-to-list 'color-themes '(color-theme-califerno-dark  "califerno-dark" "Marcello Pucci califerno@gmail.com"))

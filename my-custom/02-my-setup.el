@@ -18,7 +18,7 @@
  '(custom-enabled-themes nil)
  '(custom-safe-themes
    (quote
-	("eaa79531a53c2476b0838fba695e97cc68e6f23c2496ce3a02f303fcc32e4eff" "000e196cf11eb260fdef28588e27a8cc741d150f7851ec0f324d9496d9d2234b" "592e8a674bbf9a2bf0d0d3cca17207fa3ab2e95d42db6ffd03e9789457e1147d" "029bf246c7592f2a986532ac18db04b9a03706aea32af23a35bd7e994e6a2062" "2cbede7e0421e09d3fb6dfb497b3f22558e834fcb137811454fe701673cbdeb8" "9b9139bce6a11b9dadb5e4608534dbc2f272f604ab762a3318421ba53341b626" "4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" default)))
+	("6ecc3a003676860e5bbec2700e5246ae1931019439b357a031ea795626ce3595" "eaa79531a53c2476b0838fba695e97cc68e6f23c2496ce3a02f303fcc32e4eff" "000e196cf11eb260fdef28588e27a8cc741d150f7851ec0f324d9496d9d2234b" "592e8a674bbf9a2bf0d0d3cca17207fa3ab2e95d42db6ffd03e9789457e1147d" "029bf246c7592f2a986532ac18db04b9a03706aea32af23a35bd7e994e6a2062" "2cbede7e0421e09d3fb6dfb497b3f22558e834fcb137811454fe701673cbdeb8" "9b9139bce6a11b9dadb5e4608534dbc2f272f604ab762a3318421ba53341b626" "4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" default)))
  '(custom-theme-load-path (quote ("~/.emacs.d/my-custom/themes/" t)) t)
  '(dired-find-subdir nil)
  '(display-time-mode t)
@@ -40,7 +40,7 @@
 	("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-	(git-gutter-fringe git-gutter yaml-mode cygwin-mount zenburn-theme yasnippet smartparens rvm ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile multi-term markdown-mode hl-line+ highlight-indentation helm-dash flymake-ruby flycheck eww-lnum dired-rainbow color-theme codesearch ag ac-inf-ruby)))
+	(drag-stuff git-gutter-fringe git-gutter yaml-mode cygwin-mount zenburn-theme yasnippet smartparens rvm ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile multi-term markdown-mode hl-line+ highlight-indentation helm-dash flymake-ruby flycheck eww-lnum dired-rainbow color-theme codesearch ag ac-inf-ruby)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(recentf-max-menu-items 100)
  '(recentf-max-saved-items 9999)
@@ -101,7 +101,7 @@
 (require 'hl-line+)
 (global-hl-line-mode)
 
-(califerno-color-theme-dark)
+(color-theme-califerno-dark)
 ;; (require 'eclipse-theme)
 
 ;; Salva la posizione del cursore per ciascun file aperto
@@ -270,5 +270,15 @@
 ;;   "12Jan2002 - sailor, shell mode customizations."
 ;;   (local-set-key '[up] 'comint-previous-input)
 ;;   (local-set-key '[down] 'comint-next-input)
-;;   (local-set-key '[(shift tab)] 'comint-next-matching-input-from-input)
+;;   (local-set-key '[(shift tab)] 'comint-next-matching-input-from-drag)
 ;;   )
+
+(require 'drag-stuff)
+(drag-stuff-global-mode t)
+;; (setq drag-stuff-modifier 'shift)
+;; (setq drag-stuff-modifier '(shift))
+;; (drag-stuff-define-keys)
+
+(define-key drag-stuff-mode-map (drag-stuff--kbd 'up) 'drag-stuff-up)
+(define-key drag-stuff-mode-map (drag-stuff--kbd 'down) 'drag-stuff-down)
+

@@ -74,16 +74,16 @@
 ;; Inizio move text - M+Up/Down muove una riga o una regione in stile eclipse
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defun calife-move-line-up ()
-  (interactive)
-  (transpose-lines 1)
-  (forward-line -2))
+;; (defun calife-move-line-up ()
+;;   (interactive)
+;;   (transpose-lines 1)
+;;   (forward-line -2))
 
-(defun calife-move-line-down ()
-  (interactive)
-  (forward-line 1)
-  (transpose-lines 1)
-  (forward-line -1))
+;; (defun calife-move-line-down ()
+;;   (interactive)
+;;   (forward-line 1)
+;;   (transpose-lines 1)
+;;   (forward-line -1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Fine move text
@@ -124,50 +124,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-(defun mouse-search-forward (begin end)
-  (interactive (list (point) (mark)))
-  (let ((text (filter-buffer-substring begin end nil t)))
-    (goto-char (max begin end))
-    (let ((found-pos (search-forward text nil t)))
-      (if (not found-pos)
-          (progn
-            (goto-char begin)
-            (error "Fine file!!!"))
-          (progn
-            (goto-char found-pos)
-            (set-mark (- found-pos (length text))))))))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Start search
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defun mouse-search-backward (begin end)
-  (interactive (list (point) (mark)))
-  (let ((text (filter-buffer-substring begin end nil t)))
-    (goto-char (min begin end))
-    (let ((found-pos (search-backward text nil t)))
-      (if (not found-pos)
-          (progn
-            (goto-char begin)
-            (error "Inizio file!!!"))
-          (progn
-            (goto-char found-pos )
-            (set-mark (+ found-pos (length text))))))))
-
-(defun mouse-search (begin end)
-  (interactive (list (point) (mark)))
-  (let ((text (filter-buffer-substring begin end nil t)))
-    (goto-char (max begin end))
-    (let ((found-pos (search-forward text nil t)))
-      (if (not found-pos)
-          (progn
-            (goto-char begin)
-            (mouse-search-backward begin end))
-          (progn
-            (goto-char found-pos)
-            (set-mark (- found-pos (length text))))))))
-
-(defun my-search(begin end)
+(defun my-search-forward(begin end)
   (interactive (list (point) (mark)))
   
   (let ((text (filter-buffer-substring begin end )))
-	
+	(message "search string %s" text)
   	(let ((found-pos (search-forward text nil t))
   		  (num-matches (how-many text (point-min) (point-max))))
   	  (if (not found-pos)
@@ -179,6 +144,20 @@
   		  (progn
   			(goto-char found-pos)
   			(set-mark (- found-pos (length text))))))))
+
+(defun my-search-backward(begin end)
+  (interactive (list (point) (mark)))
+  
+  (let ((text (filter-buffer-substring begin end )))
+	(message "search string %s" text)
+  	(let ((found-pos (search-backward text nil t))
+  		  (num-matches (how-many text (point-min) (point-max)))))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; End search
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 (defun uniquify-all-lines-region (start end)
   "Find duplicate lines in region START to END keeping first occurrence."
