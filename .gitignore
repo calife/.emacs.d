@@ -1,5 +1,5 @@
-backup
-auto-save-list
+backup/**
+auto-save-list/**
 recentf
 saved-places
 projectile-bookmarks.eld

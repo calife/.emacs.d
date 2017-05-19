@@ -18,7 +18,7 @@
  '(custom-enabled-themes nil)
  '(custom-safe-themes
    (quote
-	("6ecc3a003676860e5bbec2700e5246ae1931019439b357a031ea795626ce3595" "eaa79531a53c2476b0838fba695e97cc68e6f23c2496ce3a02f303fcc32e4eff" "000e196cf11eb260fdef28588e27a8cc741d150f7851ec0f324d9496d9d2234b" "592e8a674bbf9a2bf0d0d3cca17207fa3ab2e95d42db6ffd03e9789457e1147d" "029bf246c7592f2a986532ac18db04b9a03706aea32af23a35bd7e994e6a2062" "2cbede7e0421e09d3fb6dfb497b3f22558e834fcb137811454fe701673cbdeb8" "9b9139bce6a11b9dadb5e4608534dbc2f272f604ab762a3318421ba53341b626" "4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" default)))
+	("493c07f3369965832d395c2fa4bfc7593136d20e1136d9071c478106ae89ea4a" "6ecc3a003676860e5bbec2700e5246ae1931019439b357a031ea795626ce3595" "eaa79531a53c2476b0838fba695e97cc68e6f23c2496ce3a02f303fcc32e4eff" "000e196cf11eb260fdef28588e27a8cc741d150f7851ec0f324d9496d9d2234b" "592e8a674bbf9a2bf0d0d3cca17207fa3ab2e95d42db6ffd03e9789457e1147d" "029bf246c7592f2a986532ac18db04b9a03706aea32af23a35bd7e994e6a2062" "2cbede7e0421e09d3fb6dfb497b3f22558e834fcb137811454fe701673cbdeb8" "9b9139bce6a11b9dadb5e4608534dbc2f272f604ab762a3318421ba53341b626" "4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" default)))
  '(custom-theme-load-path (quote ("~/.emacs.d/my-custom/themes/" t)) t)
  '(dired-find-subdir nil)
  '(display-time-mode t)
@@ -146,7 +146,7 @@
 (setq ac-ignore-case nil)
 (add-to-list 'ac-modes 'ruby-mode)
 
-;; (set-default-font	"-unknown-DejaVu Sans Mono-normal-normal-normal-*-11-*-*-*-m-0-iso10646-1" "keep-size")
+;; (set-default-font	"-unknown-DejaVu Sans Mono-normal-normal-normal-*-10-*-*-*-m-0-iso10646-1" "keep-size")a
 ;;(set-default-font	"-unknown-Inconsolata-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1")
 
 ; You can replace the region just by typing text, and kill the selected text just by hitting the Backspace key (‘DEL’).
@@ -226,7 +226,6 @@
 	  (setq cygwin-mount-cygwin-bin-directory "c:/cygwin/bin")
 
 	  (require 'setup-cygwin)
-	  ;; (require 'cygwin-mount)
 	  (cygwin-mount-activate)
 	  (message "Cygwin mount activated")
 	  
@@ -241,44 +240,8 @@
 	  (message "Updated PATH variable")))
 
 
-;; (defun my-shell-setup ()
-;;   "For Cygwin bash under Emacs"
-;;   (setq comint-scroll-show-maximum-output 'this)
-;;   (make-variable-buffer-local 'comint-completion-addsuffix))
-;;   (setq comint-completion-addsuffix t)
-;;   ;; (setq comint-process-echoes t) ;; reported that this is no longer needed
-;;   (setq comint-eol-on-send t)
-;;   (setq w32-quote-process-args ?\")
-
-;; When running in Windows, we want to use an alternate shell so we
-;; can be more unixy.
-
-;; (require 'fakecygpty)
-;; (fakecygpty-activate)
-
-;; (add-hook 'comint-output-filter-functions
-;;     'shell-strip-ctrl-m nil t)
-;; (add-hook 'comint-output-filter-functions
-;;     'comint-watch-for-password-prompt nil t)
-;; (setq explicit-shell-file-name "bash.exe")
-;; ;; For subprocesses invoked via the shell
-;; ;; (e.g., "shell -c command")
-;; (setq shell-file-name explicit-shell-file-name)
-
-;; (add-hook 'shell-mode-hook 'n-shell-mode-hook)
-;; (defun n-shell-mode-hook ()
-;;   "12Jan2002 - sailor, shell mode customizations."
-;;   (local-set-key '[up] 'comint-previous-input)
-;;   (local-set-key '[down] 'comint-next-input)
-;;   (local-set-key '[(shift tab)] 'comint-next-matching-input-from-drag)
-;;   )
-
 (require 'drag-stuff)
 (drag-stuff-global-mode t)
-;; (setq drag-stuff-modifier 'shift)
-;; (setq drag-stuff-modifier '(shift))
-;; (drag-stuff-define-keys)
-
 (define-key drag-stuff-mode-map (drag-stuff--kbd 'up) 'drag-stuff-up)
 (define-key drag-stuff-mode-map (drag-stuff--kbd 'down) 'drag-stuff-down)
 

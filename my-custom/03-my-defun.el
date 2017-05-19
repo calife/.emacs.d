@@ -60,8 +60,6 @@
           (dotimes (linenum (length rlines))
             (insert (aref rlines linenum))))))))
 
-
-
 ;;Convert DOS cr-lf to UNIX newline
 (defun dos2unix () (interactive) (goto-char (point-min))
   (while (search-forward "\r" nil t) (replace-match "")))
@@ -69,25 +67,6 @@
 ;;Convert UNIX newline to DOS cr-lf
 (defun unix2dos () (interactive) (goto-char (point-min))
   (while (search-forward "\n" nil t) (replace-match "\r\n")))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Inizio move text - M+Up/Down muove una riga o una regione in stile eclipse
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; (defun calife-move-line-up ()
-;;   (interactive)
-;;   (transpose-lines 1)
-;;   (forward-line -2))
-
-;; (defun calife-move-line-down ()
-;;   (interactive)
-;;   (forward-line 1)
-;;   (transpose-lines 1)
-;;   (forward-line -1))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Fine move text
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Cerca il testo selezionato nella directory corrente
 (defun calife-grep-selected (start end)

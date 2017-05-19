@@ -31,3 +31,5 @@
 ;; (global-set-key (kbd "C-x git") 'magit-status)
 
 (global-git-gutter-mode +1)
+
+;; (text-scale-adjust -1)
