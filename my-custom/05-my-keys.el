@@ -39,7 +39,7 @@
 (global-set-key (kbd "C-c t") 'toggle-truncate-lines)
 (global-set-key (kbd "<M-S-return>" ) 'my-toggle-fullscreen)
 (global-set-key (kbd "%") 'my-match-paren) ; matching delle parentesi in stile VI
-(global-set-key (kbd "<C-S-delete>") 'just-one-space-in-region) ; remove multiple whitespaces in buffer 
+(global-set-key (kbd "<C-S-delete>") 'just-one-space-in-region) ; remove multiple whitespaces in buffer
 (global-set-key (kbd "\M-%") 'query-replace)
 (global-set-key [up] "\C-p")
 (global-set-key [down] "\C-n")

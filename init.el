@@ -4,7 +4,7 @@
 
 (toggle-debug-on-error)
 (setq url-debug t)
-(setq custom-file "~/.emacs.d/my-custom/02-my-setup.el") ; custom emacs file
+(setq custom-file "~/.emacs.d/my-custom/emacs-custom.el") ; custom emacs file
 
 (add-to-list 'load-path "~/.emacs.d/other-parts/")
 (add-to-list 'load-path "~/.emacs.d/my-custom/")
@@ -18,11 +18,12 @@
 ;; (load-library "eclipse-theme") ; (require 'eclipse-theme)
 
 (load-library "02-my-setup")
-
 (load-library "03-my-defun")
 (load-library "04-my-ibuffer")
 (load-library "05-my-keys")
 (load-library "06-my-projectile")
+
+(load-library custom-file)
 
 ;; (load-library "08-my-development.el")
 ;; (load-library "06-my-ruby")
