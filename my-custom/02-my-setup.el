@@ -161,3 +161,6 @@
 (drag-stuff-global-mode t)
 (define-key drag-stuff-mode-map (drag-stuff--kbd 'up) 'drag-stuff-up)
 (define-key drag-stuff-mode-map (drag-stuff--kbd 'down) 'drag-stuff-down)
+
+(when (eq window-system 'w32)
+  (setq tramp-default-method "pscp"))

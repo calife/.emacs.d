@@ -93,7 +93,7 @@
 				 ((not prefix) "%d.%m.%Y")
 				 ((equal prefix '(4)) "%Y-%m-%d")
 				 ((equal prefix '(16)) "%A, %d. %B %Y")))
-		(system-time-locale "it_IT"))
+	(system-time-locale "it_IT"))
 	(insert (format-time-string format))))
 
 

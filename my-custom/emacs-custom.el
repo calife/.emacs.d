@@ -23,6 +23,11 @@
  '(fill-column 132)
  '(follow-mode-hook (quote (ignore)))
  '(follow-mode-off-hook (quote (ignore)))
+ '(git-gutter:added-sign "++")
+ '(git-gutter:deleted-sign "--")
+ '(git-gutter:modified-sign "<=>")
+ '(git-gutter:update-interval 2)
+ '(git-gutter:verbosity 2)
  '(global-linum-mode t)
  '(ibuffer-modified-char 77)
  '(linum-eager t)
@@ -36,7 +41,9 @@
 	("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-	(vagrant drag-stuff git-gutter-fringe git-gutter yaml-mode cygwin-mount zenburn-theme yasnippet smartparens rvm ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile multi-term markdown-mode hl-line+ highlight-indentation helm-dash flymake-ruby flycheck eww-lnum dired-rainbow color-theme codesearch ag ac-inf-ruby)))
+	(drag-stuff git-gutter-fringe git-gutter yaml-mode cygwin-mount zenburn-theme yasnippet smartparens rvm ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile multi-term markdown-mode hl-line+ highlight-indentation helm-dash flymake-ruby flycheck eww-lnum dired-rainbow color-theme codesearch ag ac-inf-ruby)))
+ '(password-cache t)
+ '(password-cache-expiry 9999999)
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(recentf-max-menu-items 100)
  '(recentf-max-saved-items 9999)
