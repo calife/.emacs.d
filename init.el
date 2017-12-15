@@ -22,6 +22,7 @@
 (load-library "04-my-ibuffer")
 (load-library "05-my-keys")
 (load-library "06-my-projectile")
+(load-library "09-my-cygwin-setup")
 
 (load-library custom-file)
 

@@ -162,5 +162,14 @@
 (define-key drag-stuff-mode-map (drag-stuff--kbd 'up) 'drag-stuff-up)
 (define-key drag-stuff-mode-map (drag-stuff--kbd 'down) 'drag-stuff-down)
 
-(when (eq window-system 'w32)
-  (setq tramp-default-method "pscp"))
+;; (when (eq window-system 'w32)
+;;   (setq tramp-default-method "pscp"))
+
+(setq tramp-verbose 10)
+
+;(setq tramp-default-method "ssh")
+;
+;(nconc (cadr (assq 'tramp-login-args (assoc "ssh" tramp-methods)))
+;       '(("bash" "-i")))
+;(setcdr (assq 'tramp-remote-sh (assoc "ssh" tramp-methods))
+;	'("bash -i"))
