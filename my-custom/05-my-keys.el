@@ -74,11 +74,12 @@
 (global-set-key [C-tab] (lambda () (interactive) (other-window +1)))
 (global-set-key [S-iso-lefttab] (lambda () (interactive) (other-window -1)))
 
-(defun eshell/open (file)
-    "Invoke (w32-shell-execute \"Open\" file) and substitute slashes for backslashes"
-    (w32-shell-execute "Open"
-                       (subst-char-in-string ?\\ ?/ (expand-file-name file)))
-    nil)
+; Shells
+(global-set-key [f12]
+				'(lambda ()
+				   (interactive)
+				   (ansi-term "/bin/bash")))
+
 
 (define-key global-map [(C down-mouse-1)] nil)
 (define-key global-map [(C mouse-1)] 'my-search-forward)

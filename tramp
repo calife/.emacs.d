@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <17/09/04 17:37:19 c:/Users/HP-Meware/AppData/Roaming/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <17/12/15 16:35:08 c:/Users/HP-Meware/AppData/Roaming/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -18,5 +18,31 @@
   ("id" "/usr/bin/id")
   ("gid-string" "root")
   ("gid-integer" 0))
- (["pscp" "root" "192.168.56.4" nil nil]
+ (["cygssh" "root" "192.168.60.2" nil nil]
+  ("uname" "Linux 4.4.0-103-generic")
+  ("locale" "LC_ALL=en_US.utf8")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("remote-shell" "/bin/sh")
+  ("file-exists" "test -e")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("readlink" "\\readlink")
+  ("stat" nil)
+  ("id" "/usr/bin/id")
+  ("gid-string" "root")
+  ("gid-integer" 0)
+  ("uid-integer" 0)
+  ("trash" nil))
+ (["ssh" "root" "192.168.60.2" nil nil]
+  nil)
+ (["pscp" "root" "192.168.60.2" nil nil]
+  nil)
+ (["pscp" "root" "192.168.56.2" nil nil]
+  nil)
+ (["ssh" "root" "192.168.56.2" nil nil]
+  nil)
+ (["ssh" "ubuntu" "192.168.56.2" nil nil]
   nil))

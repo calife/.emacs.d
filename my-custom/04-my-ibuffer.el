@@ -15,6 +15,7 @@
               (or
                 (mode . c-mode)
                 (mode . emacs-lisp-mode)
+				(mode . ruby-mode)
                 (mode . lisp-mode)))
 			("Home"
               (filename . "/home/mpucci"))

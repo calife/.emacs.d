@@ -50,3 +50,11 @@
 (global-set-key (kbd "s-p") 'projectile-find-file)
 ;; Press Command-b for fuzzy switch buffer
 (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
+
+
+(add-hook 'shell-mode-hook
+  (lambda ()
+    (define-key shell-mode-map (kbd "<M-up>") 'comint-previous-input)
+    (define-key shell-mode-map (kbd "<M-down>") 'comint-next-input)
+  )
+)
