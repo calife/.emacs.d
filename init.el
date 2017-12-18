@@ -3,7 +3,7 @@
 ;; (package-initialize)
 
 (toggle-debug-on-error)
-(setq url-debug t)
+;; (setq url-debug t)
 (setq custom-file "~/.emacs.d/my-custom/emacs-custom.el") ; custom emacs file
 
 (add-to-list 'load-path "~/.emacs.d/other-parts/")
@@ -33,5 +33,3 @@
 ;; (global-set-key (kbd "C-x git") 'magit-status)
 
 (global-git-gutter-mode +1)
-
-;; (text-scale-adjust -1)

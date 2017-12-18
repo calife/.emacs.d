@@ -40,10 +40,11 @@
 	("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-	(vagrant drag-stuff git-gutter-fringe git-gutter yaml-mode cygwin-mount zenburn-theme yasnippet smartparens rvm ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile multi-term markdown-mode hl-line+ highlight-indentation helm-dash flymake-ruby flycheck eww-lnum dired-rainbow color-theme codesearch ag ac-inf-ruby)))
+	(dired-single vagrant drag-stuff git-gutter-fringe git-gutter yaml-mode cygwin-mount zenburn-theme yasnippet smartparens rvm ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile multi-term markdown-mode hl-line+ highlight-indentation helm-dash flymake-ruby flycheck eww-lnum dired-rainbow color-theme codesearch ag ac-inf-ruby)))
  '(password-cache t)
  '(password-cache-expiry 9999999)
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
+ '(recentf-auto-cleanup 300)
  '(recentf-max-menu-items 100)
  '(recentf-max-saved-items 9999)
  '(recentf-menu-title "Open recent file")
@@ -53,7 +54,12 @@
  '(size-indication-mode t)
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
  '(tool-bar-mode nil)
+ '(tramp-histfile-override nil)
+ '(tramp-remote-process-environment
+   (quote
+	("TMOUT=0" "LC_CTYPE=''" "TERM=vt220" "INSIDE_EMACS='25.1.1,tramp:2.2.13.25.1'" "CDPATH=" "HISTORY=" "MAIL=" "MAILCHECK=" "MAILPATH=" "PAGER=cat" "autocorrect=" "correct=")))
  '(undo-outer-limit nil)
+ '(url-debug nil)
  '(vagrant-project-directory "c:/Users/HP-Meware/vagrant/")
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map

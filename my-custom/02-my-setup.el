@@ -1,4 +1,15 @@
 
+;;
+;; Start Windows performance tweaks (it really works!!!)
+;;
+(when (boundp 'w32-pipe-read-delay)
+  (setq w32-pipe-read-delay 0))
+;; Set the buffer size to 64K on Windows (from the original 4K)
+(when (boundp 'w32-pipe-buffer-size)
+  (setq irony-server-w32-pipe-buffer-size (* 64 1024)))
+
+;; End performance tuning
+
 (setq *win32* (eq system-type 'windows-nt) )
 (setq *gnu/linux* (eq system-type 'gnu/linux) )
 
@@ -81,20 +92,6 @@
 
 (setq-default tab-width 4) ;; set tab width to 4 space
 
-(put 'dired-find-alternate-file 'disabled nil)
-
-;; In dired mode gestisce gli archivi
-(setq dired-compress-file-suffixes
-      '(("\\.zip\\'" ".zip" "unzip")
-		("\\.gz\\'" "" "gunzip.bat")
-        ("\\.tgz\\'" ".tar" "gzip -d")
-        ("\\.Z\\'" "" "uncompress")
-        ("\\.z\\'" "" "gzip -d")
-        ("\\.dz\\'" "" "dictunzip")
-        ("\\.tbz\\'" ".tar" "bunzip2")
-        ("\\.bz2\\'" "" "bunzip2")
-        ("\\.tar\\'" ".tgz" nil)))
-
 ;; disable downcase warning message
 (put 'downcase-region 'disabled nil)
 
@@ -112,7 +109,8 @@
 
 ;;; Go into proper mode according to file extension
 (setq auto-mode-alist
-	  (append '(("\\.cpp\\'" . c++-mode)
+	  (append '(("\\.rb\\'" . ruby-mode)
+				("\\.cpp\\'" . c++-mode)
 				("\\.java\\'"    . java-mode)
 				("\\.jad\\'"    . java-mode)
 				("\\.text\\'" . markdown-mode)	 
@@ -162,14 +160,44 @@
 (define-key drag-stuff-mode-map (drag-stuff--kbd 'up) 'drag-stuff-up)
 (define-key drag-stuff-mode-map (drag-stuff--kbd 'down) 'drag-stuff-down)
 
-;; (when (eq window-system 'w32)
-;;   (setq tramp-default-method "pscp"))
 
-(setq tramp-verbose 10)
+;;; Start Dired setup
 
-;(setq tramp-default-method "ssh")
-;
-;(nconc (cadr (assq 'tramp-login-args (assoc "ssh" tramp-methods)))
-;       '(("bash" "-i")))
-;(setcdr (assq 'tramp-remote-sh (assoc "ssh" tramp-methods))
-;	'("bash -i"))
+(require 'dired)
+
+;; In dired mode gestisce gli archivi
+(setq dired-compress-file-suffixes
+      '(("\\.zip\\'" ".zip" "unzip")
+		("\\.gz\\'" "" "gunzip.bat")
+        ("\\.tgz\\'" ".tar" "gzip -d")
+        ("\\.Z\\'" "" "uncompress")
+        ("\\.z\\'" "" "gzip -d")
+        ("\\.dz\\'" "" "dictunzip")
+        ("\\.tbz\\'" ".tar" "bunzip2")
+        ("\\.bz2\\'" "" "bunzip2")
+        ("\\.tar\\'" ".tgz" nil)))
+
+(defun dired-mouse-find-file (event)
+  "In Dired, visit the file or directory name you click on."
+  (interactive "e")
+  (let (window pos file)
+    (save-excursion
+      (setq window (posn-window (event-end event))
+            pos (posn-point (event-end event)))
+      (if (not (windowp window))
+          (error "No file chosen"))
+      (set-buffer (window-buffer window))
+      (goto-char pos)
+      (setq file (dired-get-file-for-visit)))
+    (if (file-directory-p file)
+        (or (and (cdr dired-subdir-alist)
+                 (dired-goto-subdir file))
+            (progn
+              (select-window window)
+              (dired file)))
+      (select-window window)
+      (find-file-other-window (file-name-sans-versions file t)))))
+
+(define-key dired-mode-map [mouse-2] 'dired-mouse-find-file)
+
+;;; End Dired setup

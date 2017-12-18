@@ -1,6 +1,8 @@
 ;;; https://www.emacswiki.org/emacs/SshWithNTEmacs
 ;;
-;; Download, compile and save executable ssh.exe , fakecygpty.exe, qkill.exe on windows path
+;; Download, compile and save executable ssh.exe , fakecygpty.exe, qkill.exe
+;; Put in Windows path
+;;
 ;; test with C:>fakecygpty ssh root@host
 ;;
 ;; venerdì, 15. dicembre 2017
@@ -18,6 +20,8 @@
 ;;
 ;; /cygssh:root@host:/home/somewhere/
 ;;
+
+;; (setq tramp-verbose 10)
 
 (require 'fakecygpty)
 (fakecygpty-activate)
@@ -82,6 +86,7 @@
   (define-key term-raw-map "\C-y" 'my-term-paste))
 
 (add-hook 'term-mode-hook 'my-term-hook)
+
 
 
 ; End shell setup
