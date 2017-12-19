@@ -3,6 +3,8 @@
 
 (toggle-debug-on-error)
 
+;;(byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
+
 ;; (setq url-debug t)
 (setq custom-file "~/.emacs.d/my-custom/emacs-custom.el") ; custom emacs file
 

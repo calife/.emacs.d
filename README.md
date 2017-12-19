@@ -30,6 +30,10 @@
 `	cd .emacs.d/other-parts/
 	find . -name '*.elc' exec rm -f '{}' \;
 	emacs --batch --eval "(byte-recompile-directory \"elpa/\" 0)"`
+	
+	or
+	
+`	C-u 0 M-x byte-recompile-directory `
 
   * 5- Run emacs
 
