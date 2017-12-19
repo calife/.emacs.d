@@ -21,7 +21,7 @@
 ;; /cygssh:root@host:/home/somewhere/
 ;;
 
-;; (setq tramp-verbose 10)
+(setq tramp-verbose 10)
 
 (require 'fakecygpty)
 (fakecygpty-activate)

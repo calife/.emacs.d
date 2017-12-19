@@ -10,7 +10,11 @@
     (ibuffer-switch-to-saved-filter-groups "default")))
 
 (setq ibuffer-saved-filter-groups
-  (quote (("default"
+	  (quote (("default"
+			("Remote ssh" ;; remote filesystem via tramp + fakecygssh
+			 (or
+			  (filename . "^/cygssh")
+			  (name . "^\\*tramp")))
 			("Programming" ;; prog stuff not already in MyProjectX
               (or
                 (mode . c-mode)
@@ -21,8 +25,6 @@
               (filename . "/home/mpucci"))
 			("Emacs"
 			 (or (name . "^\\*scratch\\*$") (name . "^\\*Messages\\*$")))
-			("Org" ;; all org-related buffers
-              (mode . org-mode))
             ("Mail"
               (or  ;; mail-related buffers
                (mode . message-mode)

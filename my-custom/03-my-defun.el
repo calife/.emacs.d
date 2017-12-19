@@ -71,11 +71,12 @@
 ;; Cerca il testo selezionato nella directory corrente
 (defun calife-grep-selected (start end)
   (interactive "r")
+  (message "calife-grep-selected")
   (message (buffer-substring start end))
   (grep (concat "grep --color=always -nHR -e '"
                 (buffer-substring start end)
 				"' . ")))
-                ;; " * .*")))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Start Insert date
