@@ -34,22 +34,22 @@
   (sp-local-pair "<" ">")
   (sp-local-pair "<%" "%>"))
 
-(require 'highlight-indentation)
-(add-hook 'ruby-mode-hook
-		  (lambda () (highlight-indentation-current-column-mode)))
-(set-face-background 'highlight-indentation-face "#e3e3d3")
-(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
+;; (require 'highlight-indentation)
+;; (add-hook 'ruby-mode-hook
+;; 		  (lambda () (highlight-indentation-current-column-mode)))
+;; (set-face-background 'highlight-indentation-face "#e3e3d3")
+;; (set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
 
 ;; (yas-global-mode)
 
 
-(require 'projectile)
-(projectile-global-mode)
-(setq projectile-enable-caching t)
-;; Press Command-p for fuzzy find in project
-(global-set-key (kbd "s-p") 'projectile-find-file)
-;; Press Command-b for fuzzy switch buffer
-(global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
+;; (require 'projectile)
+;; (projectile-global-mode)
+;; (setq projectile-enable-caching t)
+;; ;; Press Command-p for fuzzy find in project
+;; (global-set-key (kbd "s-p") 'projectile-find-file)
+;; ;; Press Command-b for fuzzy switch buffer
+;; (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
 
 
 (add-hook 'shell-mode-hook
@@ -58,3 +58,27 @@
     (define-key shell-mode-map (kbd "<M-down>") 'comint-next-input)
   )
 )
+
+
+(add-hook 'ruby-mode-hook
+  (lambda () (hs-minor-mode)))
+
+(eval-after-load "hideshow"
+  '(add-to-list 'hs-special-modes-alist
+    `(ruby-mode
+      ,(rx (or "describe" "it" "def" "class" "module" "do" "if" "{" "[")) ; Block start
+      ,(rx (or "}" "]" "end"))                       ; Block end
+      ,(rx (or "#" "=begin"))                        ; Comment start
+      ruby-forward-sexp nil)))
+
+;; (global-set-key (kbd "C-c h") 'hs-hide-block)
+;; (global-set-key (kbd "C-c s") 'hs-show-block)
+;; hs-toggle-hide
+
+;; (add-hook 'ruby-mode-hook (lambda () (rainbow-mode 1)))
+
+(add-hook 'ruby-mode-hook
+          (lambda () (local-set-key (kbd "<escape>") 'hs-toggle-hiding)))
+
+
+(global-set-key [f10] 'project-explorer-toggle)

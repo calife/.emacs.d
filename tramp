@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <17/12/19 16:06:51 c:/Users/HP-Meware/AppData/Roaming/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <17/12/21 09:50:32 c:/Users/HP-Meware/AppData/Roaming/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -9,16 +9,14 @@
   ("remote-path"
    ("/usr/bin" "/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
   ("remote-shell" "/bin/sh")
-  ("file-exists" "test -e")
   ("readlink" "\\readlink")
+  ("stat" nil)
   ("perl-file-spec" t)
   ("perl-cwd-realpath" t)
   ("perl" "\\perl")
-  ("stat" nil)
   ("id" "/usr/bin/id")
   ("gid-integer" 0)
   ("gid-string" "root")
-  ("git" "\\git")
+  ("file-exists" "test -e")
   ("env-u-option" t)
-  ("uid-integer" 0)
-  ("trash" nil)))
+  ("git" "\\git")))

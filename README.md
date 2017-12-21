@@ -36,6 +36,12 @@
 `	C-u 0 M-x byte-recompile-directory `
 
   * 5- Run emacs
+  
+  
+  6- bash profile link for cygwin required
+  
+  $ ls -l .bashrc
+  lrwxrwxrwx 1 HP-Meware NESSUNO 41 Dec 20 19:10 .bashrc -> /cygdrive/c/cygwin/home/HP-Meware/.bashrc
 
 Enjoy!
 

@@ -19,12 +19,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; rvm.el
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'rvm)
-(rvm-use-default) ;; use rvm's default ruby for the current Emacs session
-(global-set-key (kbd "C-c r a") 'rvm-activate-corresponding-ruby)
+;; (require 'rvm)
+;; (rvm-use-default) ;; use rvm's default ruby for the current Emacs session
+;; (global-set-key (kbd "C-c r a") 'rvm-activate-corresponding-ruby)
 
-(defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
-  (rvm-activate-corresponding-ruby))
+;; (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
+;;   (rvm-activate-corresponding-ruby))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; autocomplete in inf-ruby mode
@@ -64,6 +64,7 @@
 				("Gemfile\\'" . ruby-mode)
 				("Capfile\\'" . ruby-mode)
 				("Vagrantfile\\'" . ruby-mode)
+				("Berksfile\\'" . ruby-mode)
 				("Guardfile\\'" . ruby-mode)
 				(".metrics\\'" . ruby-mode)
 				(".irbrc\\'" . ruby-mode))
@@ -98,8 +99,7 @@
 
 (add-hook 'ruby-mode-hook
 		  '(lambda ()
-			 (inf-ruby-keys)
-			 ))
+			 (inf-ruby-keys)))
 
 ;; (add-hook 'ruby-mode-hook 'yas-global-mode)
 
@@ -115,4 +115,4 @@
 ;;               (yas-activate-extra-mode 'rails-mode)))
 
 
-(add-hook 'ruby-mode-hook (lambda () (rainbow-mode 1)))
+;; (add-hook 'ruby-mode-hook (lambda () (rainbow-mode 1)))

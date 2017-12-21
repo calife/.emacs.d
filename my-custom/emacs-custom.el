@@ -18,6 +18,7 @@
  '(custom-theme-load-path (quote ("~/.emacs.d/my-custom/themes/" t)) t)
  '(dired-find-subdir nil)
  '(display-time-mode t)
+ '(explicit-bash-args (quote ("--noediting" "-i")))
  '(explicit-shell-file-name "c:/cygwin/bin/bash.exe")
  '(fci-rule-color "#383838")
  '(fill-column 132)
@@ -27,7 +28,7 @@
  '(git-gutter:deleted-sign "--")
  '(git-gutter:modified-sign "<=>")
  '(git-gutter:update-interval 2)
- '(git-gutter:verbosity 2)
+ '(git-gutter:verbosity 0)
  '(global-linum-mode t)
  '(ibuffer-modified-char 77)
  '(linum-eager t)
@@ -40,7 +41,7 @@
 	("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-	(project-explorer dired-single vagrant drag-stuff git-gutter-fringe git-gutter yaml-mode cygwin-mount zenburn-theme yasnippet smartparens rvm ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile multi-term markdown-mode hl-line+ highlight-indentation helm-dash flymake-ruby flycheck eww-lnum dired-rainbow color-theme codesearch ag ac-inf-ruby)))
+	(project-explorer dired-single vagrant drag-stuff git-gutter-fringe git-gutter yaml-mode cygwin-mount zenburn-theme yasnippet smartparens ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile multi-term markdown-mode hl-line+ highlight-indentation helm-dash flymake-ruby flycheck eww-lnum dired-rainbow color-theme codesearch ag ac-inf-ruby)))
  '(password-cache t)
  '(password-cache-expiry 9999999)
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
@@ -50,14 +51,15 @@
  '(recentf-menu-title "Open recent file")
  '(recentf-show-file-shortcuts-flag nil)
  '(scalable-fonts-allowed t)
+ '(shell-file-name "c:/cygwin/bin/bash.exe")
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
  '(tool-bar-mode nil)
- '(tramp-histfile-override nil)
+ '(tramp-histfile-override t)
  '(tramp-remote-process-environment
    (quote
-	("TMOUT=0" "LC_CTYPE=''" "TERM=vt220" "INSIDE_EMACS='25.1.1,tramp:2.2.13.25.1'" "CDPATH=" "HISTORY=" "MAIL=" "MAILCHECK=" "MAILPATH=" "PAGER=cat" "autocorrect=" "correct=")))
+	("TMOUT=0" "LC_CTYPE=''" "TERM=vt220" "INSIDE_EMACS='25.1.1,tramp:2.2.13.25.1'" "CDPATH=" "HISTORY=/dev/null" "MAIL=" "MAILCHECK=" "MAILPATH=" "PAGER=cat" "autocorrect=" "correct=")))
  '(undo-outer-limit nil)
  '(url-debug nil)
  '(vagrant-project-directory "c:/Users/HP-Meware/vagrant/")

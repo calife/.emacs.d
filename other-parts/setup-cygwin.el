@@ -153,7 +153,7 @@ Don't forget to mention your Emacs and library versions."))
   "Return DIRECTORY if DIRECTORY is a readable directory, nil otherwise."
   (and (stringp directory)  (file-directory-p directory)  (file-readable-p directory)  directory))
 
-(defcustom cygwin-root-directory (or (setcyg-dir-p "C:/cygwin64/")  (setcyg-dir-p "C:/cygwin/"))
+(defcustom cygwin-root-directory (or (setcyg-dir-p "C:/cygwin/")  (setcyg-dir-p "C:/cygwin/"))
   "Root directory of Cygwin installation.
 It should have subdirectories `bin' and `usr/info'.
 Subdirectory `bin' should have file `bin/bash.exe'."
@@ -215,7 +215,7 @@ loaded as such.)"
 (setenv "PATH" (concat (expand-file-name "bin" cygwin-root-directory) ";" (getenv "PATH")))
 (setq explicit-shell-file-name  shell-file-name) ; Interactive shell
 (setq ediff-shell               shell-file-name)    ; Ediff shell
-(setq explicit-shell-args       '("--login" "-i"))
+;; (setq explicit-shell-args       '("--login" "-i"))
 
 ;;;;; (setq shell-command-switch "-ic") ; SHOULD THIS BE "-c" or "-ic"?
 (setq w32-quote-process-args ?\") ;; " @@@ IS THIS BETTER? ;@@@ WAS THIS BEFORE: (setq w32-quote-process-args t)

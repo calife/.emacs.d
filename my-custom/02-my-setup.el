@@ -133,6 +133,10 @@
 	  (cygwin-mount-activate)
 	  (message "Cygwin mount activated")
 	  
+	  ;; ;; not working, YET......
+	  ;; (setenv "TERM" "vt220" )
+	  ;; (message "Updated TERM")
+
 	  (setenv "PATH"
 			  (concat
 			   "/usr/local/bin" ";"
@@ -141,7 +145,10 @@
 			   "/sbin" ";"
 			   "/usr/sbin" ";"		   
 			   (getenv "PATH") ";" ))
-	  (message "Updated PATH variable")))
+	  (message "Updated PATH variable")
+
+	  ))
+
 
 
 (require 'drag-stuff)
