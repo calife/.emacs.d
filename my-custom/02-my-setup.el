@@ -30,9 +30,6 @@
 (recentf-mode 1)
 (global-set-key "\C-c\C-r" 'recentf-open-files)
 
-;; (require 'multi-term)
-;; (setq multi-term-program "/bin/bash")
-
 (setq-default truncate-lines t)
 
 ;; Inizio impostazioni Bookmark
@@ -133,10 +130,6 @@
 	  (cygwin-mount-activate)
 	  (message "Cygwin mount activated")
 	  
-	  ;; ;; not working, YET......
-	  ;; (setenv "TERM" "vt220" )
-	  ;; (message "Updated TERM")
-
 	  (setenv "PATH"
 			  (concat
 			   "/usr/local/bin" ";"

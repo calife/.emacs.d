@@ -18,10 +18,10 @@
 				   (if (y-or-n-p-with-timeout "Quit Emacs, are you sure ? " 4 nil)
 					   (save-buffers-kill-emacs))))
 
-;; (global-set-key (kbd "C-S-f") 'calife-grep-selected)
 
 (define-key projectile-mode-map (kbd "C-S-n") 'projectile-find-file)
 (define-key projectile-mode-map (kbd "C-S-f") 'projectile-grep)
+(global-set-key (kbd "C-S-f") 'calife-grep-selected)
 
 (global-set-key (kbd "C-c d") 'insert-date)
 
@@ -77,7 +77,10 @@
 (global-set-key [f12]
 				'(lambda ()
 				   (interactive)
-				   (ansi-term "/bin/bash")))
+				   ;; (ansi-term "/bin/bash")
+				   ;; (shell)
+				   (ansi-term (getenv "SHELL") "Calife Term ©")
+				   ))
 
 
 (define-key global-map [(C down-mouse-1)] nil)

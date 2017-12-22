@@ -51,13 +51,22 @@
 ;; ;; Press Command-b for fuzzy switch buffer
 ;; (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
 
-
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook
-  (lambda ()
-    (define-key shell-mode-map (kbd "<M-up>") 'comint-previous-input)
-    (define-key shell-mode-map (kbd "<M-down>") 'comint-next-input)
-  )
-)
+		  (lambda ()
+			(define-key shell-mode-map (kbd "<M-up>") 'comint-previous-input)
+			(define-key shell-mode-map (kbd "<M-down>") 'comint-next-input)
+			(ansi-color-for-comint-mode-on)
+			)
+		  )
+
+(add-hook 'comint-mode-hook 'ansi-color-for-comint-mode-on)
+
+(add-hook 'comint-output-filter-functions
+		  'comint-strip-ctrl-m)
+
+(add-to-list 'process-coding-system-alist
+			 '("bash" . (undecided-dos . undecided-unix)))
 
 
 (add-hook 'ruby-mode-hook

@@ -66,10 +66,10 @@
 (ad-activate 'term-sentinel)
 
 ;; I don’t need ansi-term to ask me which shell to use every time I invoke it
-(defvar my-term-shell "/bin/bash")
-(defadvice ansi-term (before force-bash)
-  (interactive (list my-term-shell)))
-(ad-activate 'ansi-term)
+;; (defvar my-term-shell "/bin/bash")
+;; (defadvice ansi-term (before force-bash)
+;;   (interactive (list my-term-shell)))
+;; (ad-activate 'ansi-term)
 
 ;; Display of certain characters and control codes
 (defun my-term-use-utf8 ()
@@ -84,7 +84,13 @@
   (if string string (current-kill 0))))
 
 (defun my-term-hook ()
-  (define-key term-raw-map "\C-y" 'my-term-paste))
+  (define-key term-raw-map "\C-y" 'my-term-paste)
+  (setq term-prompt-regexp "^[^#$%>\n]*[#$%>] *")
+  (setq-local mouse-yank-at-point t)
+  (setq-local transient-mark-mode nil)
+  (auto-fill-mode -1)
+  (setq tab-width 8 )
+  )
 
 (add-hook 'term-mode-hook 'my-term-hook)
 
