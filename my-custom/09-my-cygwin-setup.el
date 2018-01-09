@@ -90,6 +90,8 @@
   (setq-local transient-mark-mode nil)
   (auto-fill-mode -1)
   (setq tab-width 8 )
+  (yas-minor-mode -1)
+  (linum-mode -1)
   )
 
 (add-hook 'term-mode-hook 'my-term-hook)

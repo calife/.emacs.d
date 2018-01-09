@@ -32,7 +32,7 @@
 (global-set-key (kbd "C-ì") "~" )
 (global-set-key (kbd "C-'") "`" )
 (global-set-key [f11] 'my-toggle-fullscreen)
-(global-set-key (kbd "\C-x\C-r") 'find-name-dired)
+
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-S-c") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c t") 'toggle-truncate-lines)
