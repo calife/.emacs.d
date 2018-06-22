@@ -2,4 +2,49 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-()
+(("172.16.50.200_rpmbuild"
+ (filename . "/cygssh:root@172.16.50.200:/home/rpmbuild/rpmbuild/")
+ (front-context-string . "BUILD\n  drwxr-xr")
+ (rear-context-string . "096 03-08 20:20 ")
+ (position . 224))
+("ruby_scripts"
+ (filename . "c:/Users/HP-Meware/RubymineProjects/chefRecipes/")
+ (front-context-string . ".git\n  drwxrwxrw")
+ (rear-context-string . "096 03-08 20:17 ")
+ (position . 259))
+("rpms_src"
+ (filename . "c:/cygwin/tmp/rpms_src/")
+ (front-context-string . "BUILD\n  drwxrwxr")
+ (rear-context-string . "096 02-26 11:37 ")
+ (position . 237))
+("10.10.5.106_chefadmin"
+ (filename . "/cygssh:root@10.10.5.106:/home/chefadmin/")
+ (front-context-string . ".bash_profile\n  ")
+ (rear-context-string . "176 02-26 10:26 ")
+ (position . 216))
+("10.10.5.106_root"
+ (filename . "/cygssh:root@10.10.5.106:/root/")
+ (front-context-string . "anaconda-ks.cfg\n")
+ (rear-context-string . "022 02-12 15:42 ")
+ (position . 196))
+("chefwk_voicemail_common"
+ (filename . "/cygssh:root@192.168.145.138:/root/hpe_voicemail_lab/cookbooks/")
+ (front-context-string . "apt\n  -rw-r--r--")
+ (rear-context-string . "096 2017-07-03  ")
+ (position . 216))
+("chefwk_voicemail_environments_new"
+ (filename . "/cygssh:root@192.168.145.138:/root/hpe_voicemail_lab/environments_new/")
+ (front-context-string . ".git\n  -rw-r--r-")
+ (rear-context-string . "096 03-01 14:49 ")
+ (position . 222))
+("csms_environments"
+ (filename . "/cygssh:root@192.168.145.138:/root/hpe_cms_voicemail_lab/environments/")
+ (front-context-string . ".git\n  -rw-r--r-")
+ (rear-context-string . "096 03-01 15:19 ")
+ (position . 219))
+("csms_cookbooks"
+ (filename . "/cygssh:root@192.168.145.138:/root/hpe_cms_voicemail_lab/cookbooks/")
+ (front-context-string . "apt\n  -rw-r--r--")
+ (rear-context-string . "096 2017-07-03  ")
+ (position . 219))
+)

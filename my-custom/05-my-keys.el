@@ -12,11 +12,11 @@
 		   (if (y-or-n-p-with-timeout "Quit Emacs, are you sure ? " 4 nil)
 		       (save-buffers-kill-emacs))))
 
-(global-set-key (kbd "<M-f4>")
-				'(lambda ()
-				   (interactive)
-				   (if (y-or-n-p-with-timeout "Quit Emacs, are you sure ? " 4 nil)
-					   (save-buffers-kill-emacs))))
+;; (global-set-key (kbd "<M-f4>")
+;; 				'(lambda ()
+;; 				   (interactive)
+;; 				   (if (y-or-n-p-with-timeout "Quit Emacs, are you sure ? " 4 nil)
+;; 					   (save-buffers-kill-emacs))))
 
 
 (define-key projectile-mode-map (kbd "C-S-n") 'projectile-find-file)
@@ -58,6 +58,8 @@
 (global-set-key [C-next] "\M->")
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key "\M-g" 'goto-line)
+;; (global-set-key "\C-e" 'end-of-buffer)
+;; (global-set-key "\C-a" (lambda () (interactive) (goto-line 1)))
 
 ;; Frame sesize
 (global-set-key (kbd "S-<up>") (lambda () (interactive) (shrink-window 5)))
@@ -66,8 +68,14 @@
 (global-set-key (kbd "S-<right>") (lambda () (interactive) (enlarge-window-horizontally 5)))
 
 ;; Multi window layout
-(global-set-key (kbd "<M-C-prior>" ) 'scroll-other-window-up)
-(global-set-key (kbd "<M-C-next>" ) 'scroll-other-window-down)
+;; (global-set-key (kbd "<M-C-prior>" ) 'scroll-other-window-up)
+;; (global-set-key (kbd "<M-C-next>" ) 'scroll-other-window-down)
+(global-set-key (kbd "<M-f2>") 'split-window-below)
+(global-set-key (kbd "<M-f3>") 'split-window-right)
+(global-set-key (kbd "<M-f4>") 'kill-buffer-and-window)
+(global-set-key (kbd "<M-f5>") 'delete-other-windows)
+;; (global-set-key [C-M-next]  'next-buffer)
+;; (global-set-key [C-M-prior]  'previous-buffer)
 
 ; Cycle throw windows
 (global-set-key [C-tab] (lambda () (interactive) (other-window +1)))
@@ -77,8 +85,6 @@
 (global-set-key [f12]
 				'(lambda ()
 				   (interactive)
-				   ;; (ansi-term "/bin/bash")
-				   ;; (shell)
 				   (ansi-term (getenv "SHELL") "Calife Term ©")
 				   ))
 
@@ -92,7 +98,7 @@
 (define-key global-map (kbd "<S-mouse-1>") 'mouse-set-point)
 
 
-
+(global-set-key (kbd "<left-margin> <C-double-mouse-1>") 'md-select-linum)
 (global-set-key (kbd "<left-margin> <down-mouse-1>") 'md-select-linum)
 (global-set-key (kbd "<left-margin> <mouse-1>") 'mu-select-linum)
 (global-set-key (kbd "<left-margin> <drag-mouse-1>") 'mu-select-linum)

@@ -45,6 +45,9 @@
  '(password-cache t)
  '(password-cache-expiry 9999999)
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
+ '(pe/inline-folders nil)
+ '(projectile-indexing-method (quote alien))
+ '(projectile-use-git-grep t)
  '(recentf-auto-cleanup 300)
  '(recentf-max-menu-items 100)
  '(recentf-max-saved-items 9999)
@@ -93,5 +96,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Courier New" :foundry "outline" :slant normal :weight normal :height 90 :width normal))))
+ '(ediff-even-diff-A ((t (:background "snow4"))))
+ '(ediff-even-diff-Ancestor ((t (:background "snow4"))))
  '(linum ((t (:height 0.75))))
  '(tool-bar ((t (:background "black" :foreground "snow" :box (:line-width 1 :style released-button))))))
