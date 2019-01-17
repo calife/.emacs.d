@@ -28,8 +28,8 @@
 
   * 4- Clean .elc and recompile
 `	cd .emacs.d/other-parts/
-	find . -name '*.elc' exec rm -f '{}' \;
-	emacs --batch --eval "(byte-recompile-directory \"elpa/\" 0)"`
+	find . -name '*.elc' -exec rm -f '{}' \;
+	emacs --batch --eval "(byte-recompile-directory \"elpa/\" 0)"
 	
 	or
 	

@@ -25,13 +25,11 @@
 (load-library "05-my-keys")
 (load-library "06-my-projectile")
 (load-library "06-my-ruby")
-;; (load-library "07-my-helm")
-(load-library "08-my-development")
-(load-library "09-my-cygwin-setup")
+;; ;; (load-library "07-my-helm")
+;; (load-library "08-my-development")
+;; (load-library "09-my-cygwin-setup")
 (load-library "10-my-performance")
 
 (load-library custom-file)
-
-;; (global-set-key (kbd "C-x git") 'magit-status)
 
 (global-git-gutter-mode +1)

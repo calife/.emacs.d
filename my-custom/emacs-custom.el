@@ -19,7 +19,7 @@
  '(dired-find-subdir nil)
  '(display-time-mode t)
  '(explicit-bash-args (quote ("--noediting" "-l" "--rcfile $HOME/.bash_profile")))
- '(explicit-shell-file-name "/cygdrive/c/cygwin/bin/bash.exe")
+ '(explicit-shell-file-name "/bin/bash")
  '(fci-rule-color "#383838")
  '(fill-column 132)
  '(follow-mode-hook (quote (ignore)))
@@ -41,7 +41,7 @@
 	("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-	(xterm-color project-explorer dired-single vagrant drag-stuff git-gutter-fringe git-gutter yaml-mode cygwin-mount zenburn-theme yasnippet smartparens ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile markdown-mode hl-line+ highlight-indentation helm-dash flymake-ruby flycheck dired-rainbow color-theme codesearch ag ac-inf-ruby)))
+	(helm-core inf-ruby helm xterm-color project-explorer dired-single vagrant drag-stuff git-gutter-fringe git-gutter yaml-mode cygwin-mount zenburn-theme yasnippet smartparens ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile markdown-mode hl-line+ highlight-indentation helm-dash flymake-ruby flycheck dired-rainbow color-theme codesearch ag ac-inf-ruby)))
  '(password-cache t)
  '(password-cache-expiry 9999999)
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
@@ -54,7 +54,7 @@
  '(recentf-menu-title "Open recent file")
  '(recentf-show-file-shortcuts-flag nil)
  '(scalable-fonts-allowed t)
- '(shell-file-name "c:/cygwin/bin/bash.exe")
+ '(shell-file-name "/bin/bash")
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
@@ -98,5 +98,5 @@
  '(default ((t (:family "Courier New" :foundry "outline" :slant normal :weight normal :height 90 :width normal))))
  '(ediff-even-diff-A ((t (:background "snow4"))))
  '(ediff-even-diff-Ancestor ((t (:background "snow4"))))
- '(linum ((t (:height 0.75))))
+ '(linum ((t (:foreground "grey70" :height 0.85))))
  '(tool-bar ((t (:background "black" :foreground "snow" :box (:line-width 1 :style released-button))))))

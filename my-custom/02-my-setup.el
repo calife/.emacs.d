@@ -60,8 +60,8 @@
 (setq ac-ignore-case nil)
 (add-to-list 'ac-modes 'ruby-mode)
 
-;; (set-default-font	"-unknown-DejaVu Sans Mono-normal-normal-normal-*-10-*-*-*-m-0-iso10646-1" "keep-size")a
-;;(set-default-font	"-unknown-Inconsolata-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1")
+;;(set-default-font	"-unknown-DejaVu Sans Mono-normal-normal-normal-*-10-*-*-*-m-0-iso10646-1" "keep-size")
+;; (set-default-font	"-unknown-Inconsolata-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1")
 
 ; You can replace the region just by typing text, and kill the selected text just by hitting the Backspace key (‘DEL’).
 (transient-mark-mode 1) ; highlight text selection
