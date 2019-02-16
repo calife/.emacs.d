@@ -5,6 +5,35 @@
 ;; Friday, 15. May 2015
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(defun calife-help ()
+   "Print help for calife-* functions <califerno@gmail.com>"
+   (interactive)
+   (switch-to-buffer "*CALIFE HELP*")
+   (erase-buffer)
+   (insert (format "%s\n" "================================================== CALIFE CUSTOM FUNCTIONS =================================================="))
+   (insert (format "%50s %-10s %-60s\n" "FUNCTION" " KEY" "DESCRIPTION"))
+   (insert (format "%s\n" "============================================================================================================================="))
+   (insert (format "%50s  %-10s %-60s\n" "calife-help" "" "Print help for calife-* functions <califerno@gmail.com>"))
+   (insert (format "%50s  %-10s %-60s\n" "calife-grep-selected" "" "Grep selected text into current directory"))
+   (insert (format "%50s  %-10s %-60s\n" "calife-comment-or-uncomment-eclipse" "" ""))
+   (insert (format "%50s  %-10s %-60s\n" "calife-region-info" "" "Sample code to show region begin/end positions."))
+   (insert (format "%50s  %-10s %-60s\n" "calife-is-region-active" "" "Print whether region is active."))
+   (insert (format "%50s  %-10s %-60s\n" "calife-upcase-region-or-word" "C-x C-y" "upcase current word or region."))
+   (insert (format "%50s  %-10s %-60s\n" "calife-downcase-region-or-word" "C-x C-x"  "downcase current word or region."))
+   (insert (format "%50s  %-10s %-60s\n" "calife-camel-region-or-word" "C-x C-z" "Camel current word or region(Still in development)."))
+   (insert (format "%s\n" "============================================================================================================================="))
+   (insert (format "%s\n" ""))
+   (insert (format "%s\n" ""))
+   (insert (format "%s\n" "================================================== CALIFE CUSTOM KEYS =================================================="))
+   (insert (format "%50s %-10s\n" "FUNCTION" " KEY" ))
+   (insert (format "%s\n" "============================================================================================================================="))
+   (insert (format "%50s  %-10s \n" "C-8" "{" ))
+   (insert (format "%50s  %-10s \n" "C-9" "}" ))
+   (insert (format "%50s  %-10s \n" "C-ì" "~" ))
+   (insert (format "%50s  %-10s \n" "C-'" "`" ))
+   (insert (format "%s\n" "============================================================================================================================="))
+   (end-of-buffer))
+
 (defun print-ascii-table ()
   "Print the ascii table - based on a defun by Alex Schroeder <asc@bsiag.com>"
   (interactive)
@@ -70,6 +99,7 @@
 
 ;; Cerca il testo selezionato nella directory corrente
 (defun calife-grep-selected (start end)
+  "Grep selected text into current directory"
   (interactive "r")
   (message "calife-grep-selected")
   (message (buffer-substring start end))
@@ -94,8 +124,8 @@
 				 ((not prefix) "%d.%m.%Y")
 				 ((equal prefix '(4)) "%Y-%m-%d")
 				 ((equal prefix '(16)) "%A, %d. %B %Y")))
-	(system-time-locale "it_IT"))
-	(insert (format-time-string format))))
+		(system-time-locale "en_US"))
+		(insert (format-time-string format))))
 
 
 
@@ -266,6 +296,85 @@
 ;;;;;;;;;;;;;;;;;;;;
 ;; End Linum setup
 ;;;;;;;;;;;;;;;;;;;;
+
+
+;; https://www.emacswiki.org/emacs/CommentingCode
+(defun calife-comment-or-uncomment-eclipse ()
+      (interactive)
+      (let ((start (line-beginning-position))
+            (end (line-end-position)))
+        (when (or (not transient-mark-mode) (region-active-p))
+          (setq start (save-excursion
+                        (goto-char (region-beginning))
+                        (beginning-of-line)
+                        (point))
+                end (save-excursion
+                      (goto-char (region-end))
+                      (end-of-line)
+                      (point))))
+        (comment-or-uncomment-region start end)))
+
+
+;; http://ergoemacs.org/emacs/emacs_region.html
+(defun calife-region-info ()
+  "Sample code to show region begin/end positions."
+  (interactive)
+  (message "begin at %s end at %s"
+           (region-beginning)
+           (region-end)))
+
+(defun calife-is-region-active ()
+  "Print whether region is active."
+  (interactive)
+  (if (use-region-p)
+      (message "region active")
+    (message "region not active")))
+
+(defun calife-upcase-region-or-word ()
+  "upcase current word or region."
+(interactive)
+(let (pos1 pos2 bds)
+  (if (use-region-p)
+     (setq pos1 (region-beginning) pos2 (region-end))
+    (progn
+      (setq bds (bounds-of-thing-at-point 'word))
+      (setq pos1 (car bds) pos2 (cdr bds))))
+
+  ;; now, pos1 and pos2 are the starting and ending positions of the
+  ;; current word, or current text selection if exist.
+  (upcase-region pos1 pos2)
+  ))
+
+(defun calife-downcase-region-or-word ()
+  "downcase current word or region."
+(interactive)
+(let (pos1 pos2 bds)
+  (if (use-region-p)
+     (setq pos1 (region-beginning) pos2 (region-end))
+    (progn
+      (setq bds (bounds-of-thing-at-point 'word))
+      (setq pos1 (car bds) pos2 (cdr bds))))
+
+  ;; now, pos1 and pos2 are the starting and ending positions of the
+  ;; current word, or current text selection if exist.
+  (downcase-region pos1 pos2)
+  ))
+
+
+(defun calife-camel-region-or-line ()
+  "Camel current word or region."
+(interactive)
+(let (pos1 pos2 bds)
+  (if (use-region-p)
+     (setq pos1 (region-beginning) pos2 (region-end))
+    (progn
+      (setq bds (bounds-of-thing-at-point 'word))
+      (setq pos1 (car bds) pos2 (cdr bds))))
+
+  ;; now, pos1 and pos2 are the starting and ending positions of the
+  ;; current word, or current text selection if exist.
+  (capitalize-region pos1 pos2)
+  ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                             End custom functions

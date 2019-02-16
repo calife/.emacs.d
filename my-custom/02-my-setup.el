@@ -1,4 +1,6 @@
 
+(message "Loading 02-my-setup")
+
 (setq *win32* (eq system-type 'windows-nt) )
 (setq *gnu/linux* (eq system-type 'gnu/linux) )
 
@@ -18,8 +20,14 @@
 (require 'hl-line+)
 (global-hl-line-mode)
 
-(color-theme-califerno-dark)
+;; Load theme
+(when (display-graphic-p)
 ;; (require 'eclipse-theme)
+  ;; (color-theme-califerno-dark) ; require (load-library "califerno-dark-theme")
+  (setq custom-safe-themes t)
+  (add-to-list 'custom-theme-load-path "~/.emacs.d/other-parts/elpa/darcula-theme-2.0/")
+  (load-theme  'darcula)
+)
 
 ;; Salva la posizione del cursore per ciascun file aperto
 (require 'saveplace)
@@ -138,17 +146,16 @@
 			   "/sbin" ";"
 			   "/usr/sbin" ";"		   
 			   (getenv "PATH") ";" ))
-	  (message "Updated PATH variable")
+	  (message "Updated PATH variable")))
 
-	  ))
-
-
+(if *gnu/linux*
+	(progn
+	  (message "Running on Gnu/Linux")))
 
 (require 'drag-stuff)
 (drag-stuff-global-mode t)
 (define-key drag-stuff-mode-map (drag-stuff--kbd 'up) 'drag-stuff-up)
 (define-key drag-stuff-mode-map (drag-stuff--kbd 'down) 'drag-stuff-down)
-
 
 ;;; Start Dired setup
 
@@ -166,27 +173,7 @@
         ("\\.bz2\\'" "" "bunzip2")
         ("\\.tar\\'" ".tgz" nil)))
 
-(defun dired-mouse-find-file (event)
-  "In Dired, visit the file or directory name you click on."
-  (interactive "e")
-  (let (window pos file)
-    (save-excursion
-      (setq window (posn-window (event-end event))
-            pos (posn-point (event-end event)))
-      (if (not (windowp window))
-          (error "No file chosen"))
-      (set-buffer (window-buffer window))
-      (goto-char pos)
-      (setq file (dired-get-file-for-visit)))
-    (if (file-directory-p file)
-        (or (and (cdr dired-subdir-alist)
-                 (dired-goto-subdir file))
-            (progn
-              (select-window window)
-              (dired file)))
-      (select-window window)
-      (find-file-other-window (file-name-sans-versions file t)))))
 
-(define-key dired-mode-map [mouse-2] 'dired-mouse-find-file)
+(message "Loaded 02-my-setup")
 
 ;;; End Dired setup

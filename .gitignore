@@ -8,3 +8,5 @@ tutorial
 projectile.cache
 project-explorer-cache/**
 tramp
+%backup%~
+recentf*

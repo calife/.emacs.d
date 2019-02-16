@@ -30,6 +30,8 @@
 
 ;;; Code:
 
+(message "Loading eclipse-theme")
+
 (deftheme eclipse
     "Color theme from Eclipse.")
 
@@ -153,5 +155,7 @@
                    (file-name-directory load-file-name))))
 
 (provide 'eclipse-theme)
+
+(message "Loaded eclipse-theme")
 
 ;;; eclipse-theme.el ends here
