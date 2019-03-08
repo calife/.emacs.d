@@ -177,8 +177,3 @@
 (message "Loaded 02-my-setup")
 
 ;;; End Dired setup
-
-
-
-
-;; skjksa
