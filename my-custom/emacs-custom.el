@@ -10,7 +10,7 @@
  '(custom-enabled-themes (quote (darcula)))
  '(custom-safe-themes
    (quote
-	("8eafb06bf98f69bfb86f0bfcbe773b44b465d234d4b95ed7fa882c99d365ebfd" "ef0f78ab3d097248acdbef675e41f8547b10bca8627498910de1db26f80ae4de" "95dfc5473272a6076dc3682fcd09625d46b13653a6cbb29dfb783babb1c93d92" "9ec826a31fb9202db980ab66dc8cf247b7a8853ef479fcfb7ce4da441802f2c4" "045aa4b75c2e1809c0a449835596349274138c3602dd8d23e2aed75e50bd1d09" default)))
+	("ef0f78ab3d097248acdbef675e41f8547b10bca8627498910de1db26f80ae4de" "95dfc5473272a6076dc3682fcd09625d46b13653a6cbb29dfb783babb1c93d92" "9ec826a31fb9202db980ab66dc8cf247b7a8853ef479fcfb7ce4da441802f2c4" "045aa4b75c2e1809c0a449835596349274138c3602dd8d23e2aed75e50bd1d09" default)))
  '(ensime-sem-high-faces
    (quote
 	((var :foreground "#9876aa" :underline
@@ -36,7 +36,7 @@
 	("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-	(org-pomodoro zenburn-theme yasnippet yaml-mode xterm-color vagrant smartparens ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile project-explorer markdown-mode hl-line+ highlight-indentation helm-dash git-gutter flymake-ruby flycheck drag-stuff dired-single dired-rainbow cygwin-mount color-theme codesearch ag ac-inf-ruby)))
+	(magit-gitflow magit org-pomodoro zenburn-theme yasnippet yaml-mode xterm-color vagrant smartparens ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile project-explorer markdown-mode hl-line+ highlight-indentation helm-dash git-gutter flymake-ruby flycheck drag-stuff dired-single dired-rainbow cygwin-mount color-theme codesearch ag ac-inf-ruby)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
