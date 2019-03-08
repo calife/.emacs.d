@@ -98,14 +98,34 @@
   (while (search-forward "\n" nil t) (replace-match "\r\n")))
 
 ;; Cerca il testo selezionato nella directory corrente
-(defun calife-grep-selected (start end)
-  "Grep selected text into current directory"
+;; (defun
+;; 	calife-grep-selected (start end)
+;;   "Grep selected text into current directory"
+;;   (interactive "r")
+;;   (message "calife-grep-selected")
+;;   (message (buffer-substring start end))
+;;   (grep (concat "grep --color=always --exclude='./projectile.cache' --exclude-dir='./.git' -nHR -e '"
+;;                 (buffer-substring start end)
+;; 				"' . ")))
+
+;; TODO remove because defined in grep.el
+;; (eval-after-load 'grep
+;;   '(when (boundp 'grep-find-ignored-files)
+;;      (add-to-list 'grep-find-ignored-files "*projectile.cache")))
+;; (eval-after-load 'grep
+;;   '(when (boundp 'grep-find-ignored-directories)
+;;      (add-to-list 'grep-find-ignored-directories "*.git")))
+
+(defun
+	calife-grep-selected (start end)
+  "RGrep selected text into current directory"
   (interactive "r")
   (message "calife-grep-selected")
   (message (buffer-substring start end))
-  (grep (concat "grep --color=always -nHR -e '"
-                (buffer-substring start end)
-				"' . ")))
+  (rgrep  (buffer-substring start end)))
+
+
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
