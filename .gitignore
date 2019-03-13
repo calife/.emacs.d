@@ -10,3 +10,5 @@ project-explorer-cache/**
 tramp
 %backup%~
 recentf*
+*.elc
+*.elc~
