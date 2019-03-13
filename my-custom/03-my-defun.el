@@ -14,7 +14,7 @@
    (insert (format "%50s %-10s %-60s\n" "FUNCTION" " KEY" "DESCRIPTION"))
    (insert (format "%s\n" "============================================================================================================================="))
    (insert (format "%50s  %-10s %-60s\n" "calife-help" "" "Print help for calife-* functions <califerno@gmail.com>"))
-   (insert (format "%50s  %-10s %-60s\n" "calife-grep-selected" "" "Grep selected text into current directory"))
+   (insert (format "%50s  %-10s %-60s\n" "calife-grep-selected" "C-S-f" "Grep selected text into current directory"))
    (insert (format "%50s  %-10s %-60s\n" "calife-comment-or-uncomment-eclipse" "" ""))
    (insert (format "%50s  %-10s %-60s\n" "calife-region-info" "" "Sample code to show region begin/end positions."))
    (insert (format "%50s  %-10s %-60s\n" "calife-is-region-active" "" "Print whether region is active."))
@@ -122,7 +122,7 @@
   (interactive "r")
   (message "calife-grep-selected")
   (message (buffer-substring start end))
-  (rgrep  (buffer-substring start end)))
+  (lgrep  (buffer-substring start end)))
 
 
 

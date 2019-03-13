@@ -11,9 +11,9 @@
 
 (setq ibuffer-saved-filter-groups
 	  (quote (("default"
-			   ("Remote ssh" ;; remote filesystem via tramp + fakecygssh
+			   ("Remote ssh" ;; remote filesystem via tramp
 				(or
-				 (filename . "^/cygssh")
+				 (filename . "^/ssh")
 				 (name . "^\\*tramp")))
 			   ("Programming" ;; prog stuff not already in MyProjectX
 				(or

@@ -31,12 +31,60 @@
 	 (package :foreground "#cc7832")
 	 (deprecated :strike-through "#a9b7c6"))))
  '(fci-rule-color "#383838")
+ '(grep-find-ignored-directories
+   (quote
+	("SCCS" "RCS" "CVS" "MCVS" ".src" ".svn" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" ".*" ".bak" "project-explorer-cache")))
+ '(grep-find-ignored-files
+   (quote
+	(".#*" "*.o" "*~" "*.bin" "*.lbin" "*.so" "*.a" "*.ln" "*.blg" "*.bbl" "*.elc" "*.lof" "*.glo" "*.idx" "*.lot" "*.fmt" "*.tfm" "*.class" "*.fas" "*.lib" "*.mem" "*.x86f" "*.sparcf" "*.dfsl" "*.pfsl" "*.d64fsl" "*.p64fsl" "*.lx64fsl" "*.lx32fsl" "*.dx64fsl" "*.dx32fsl" "*.fx64fsl" "*.fx32fsl" "*.sx64fsl" "*.sx32fsl" "*.wx64fsl" "*.wx32fsl" "*.fasl" "*.ufsl" "*.fsl" "*.dxl" "*.lo" "*.la" "*.gmo" "*.mo" "*.toc" "*.aux" "*.cp" "*.fn" "*.ky" "*.pg" "*.tp" "*.vr" "*.cps" "*.fns" "*.kys" "*.pgs" "*.tps" "*.vrs" "*.pyc" "*.pyo" "*.jar")))
+ '(ibuffer-saved-filter-groups
+   (quote
+	(("default"
+	  ("Remote ssh"
+	   (or
+		(filename . "^/cygssh")
+		(name . "^\\*tramp")))
+	  ("Programming"
+	   (or
+		(mode . c-mode)
+		(mode . emacs-lisp-mode)
+		(mode . ruby-mode)
+		(mode . lisp-mode)))
+	  ("Home"
+	   (filename . "/home/mpucci"))
+	  ("Emacs"
+	   (or
+		(name . "^\\*scratch\\*$")
+		(name . "^\\*Messages\\*$")))
+	  ("Terminal"
+	   (mode . term-mode))
+	  ("Mail"
+	   (or
+		(mode . message-mode)
+		(mode . mail-mode)))))))
+ '(ibuffer-saved-filters
+   (quote
+	(("gnus"
+	  ((or
+		(mode . message-mode)
+		(mode . mail-mode)
+		(mode . gnus-group-mode)
+		(mode . gnus-summary-mode)
+		(mode . gnus-article-mode))))
+	 ("programming"
+	  ((or
+		(mode . emacs-lisp-mode)
+		(mode . cperl-mode)
+		(mode . c-mode)
+		(mode . java-mode)
+		(mode . idl-mode)
+		(mode . lisp-mode)))))))
  '(nrepl-message-colors
    (quote
 	("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-	(magit-gitflow magit org-pomodoro zenburn-theme yasnippet yaml-mode xterm-color vagrant smartparens ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile project-explorer markdown-mode hl-line+ highlight-indentation helm-dash git-gutter flymake-ruby flycheck drag-stuff dired-single dired-rainbow cygwin-mount color-theme codesearch ag ac-inf-ruby)))
+	(org-pomodoro zenburn-theme yasnippet yaml-mode xterm-color vagrant smartparens ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile project-explorer markdown-mode hl-line+ highlight-indentation helm-dash git-gutter flymake-ruby flycheck drag-stuff dired-single dired-rainbow cygwin-mount color-theme codesearch ag ac-inf-ruby)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
