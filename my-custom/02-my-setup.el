@@ -174,6 +174,8 @@
         ("\\.tar\\'" ".tgz" nil)))
 
 
+(tool-bar-mode -1)
+
 (message "Loaded 02-my-setup")
 
 ;;; End Dired setup
