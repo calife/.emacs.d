@@ -1,6 +1,7 @@
 backup/**
 auto-save-list/**
 recentf
+#recentf#
 saved-places
 projectile-bookmarks.eld
 ac-comphist.dat
@@ -12,3 +13,4 @@ tramp
 recentf*
 *.elc
 *.elc~
+session.*

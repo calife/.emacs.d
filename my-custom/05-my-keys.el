@@ -14,8 +14,6 @@
 		   (if (y-or-n-p-with-timeout "Quit Emacs, are you sure ? " 4 nil)
 		       (save-buffers-kill-emacs))))
 
-(define-key projectile-mode-map (kbd "C-S-n") 'projectile-find-file)
-(define-key projectile-mode-map (kbd "C-S-f") 'projectile-grep)
 (global-set-key (kbd "C-S-f") 'calife-grep-selected)
 
 (global-set-key (kbd "C-c d") 'insert-date)
@@ -28,9 +26,6 @@
 (global-set-key (kbd "C-'") "`" )
 (global-set-key [f11] 'my-toggle-fullscreen)
 
-;; (global-set-key (kbd "\C-x x") 'calife-downcase-region-or-line)
-;; (global-set-key (kbd "\C-x y") 'calife-upcase-region-or-line)
-
 (global-set-key (kbd "C-x C-x") 'calife-downcase-region-or-word)
 (global-set-key (kbd "C-x C-y") 'calife-upcase-region-or-word)
 (global-set-key (kbd "C-x C-z") 'calife-camel-region-or-word)
@@ -40,7 +35,8 @@
 (global-set-key (kbd "C-c t") 'toggle-truncate-lines)
 (global-set-key (kbd "<M-S-return>" ) 'my-toggle-fullscreen)
 (global-set-key (kbd "%") 'my-match-paren) ; matching delle parentesi in stile VI
-(global-set-key (kbd "<C-S-delete>") 'just-one-space-in-region) ; remove multiple whitespaces in buffer
+;; (global-set-key (kbd "<C-S-delete>") 'just-one-space-in-region) ; remove multiple whitespaces in buffer
+(global-set-key (kbd "<C-S-delete>") 'calife-delete-blank-lines) ; remove multiple empty lines
 (global-set-key (kbd "\M-%") 'query-replace)
 (global-set-key [up] "\C-p")
 (global-set-key [down] "\C-n")
@@ -101,5 +97,8 @@
 (global-set-key (kbd "<left-margin> <down-mouse-1>") 'md-select-linum)
 (global-set-key (kbd "<left-margin> <mouse-1>") 'mu-select-linum)
 (global-set-key (kbd "<left-margin> <drag-mouse-1>") 'mu-select-linum)
+
+;; Execute text in a terminal, no questions! (ctrl-alt-shift-enter to avoid accidents!)
+;; (global-set-key (kbd "<C-M-return>") 'term-shell-command-on-region-or-line)
 
 (message "Loaded 05-my-keys.el")

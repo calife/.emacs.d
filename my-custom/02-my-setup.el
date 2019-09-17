@@ -121,9 +121,7 @@
 
 (setq x-select-enable-clipboard-manager nil)
 
-;; To enable pojectile management create an empty .projectile file under project directory
-(require 'projectile)
-(projectile-mode)
+
 
 
 (if *win32*

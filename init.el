@@ -3,7 +3,7 @@
 
 (toggle-debug-on-error)
 
-(byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
+;; (byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
 
 (setq url-debug t)
 (setq custom-file "~/.emacs.d/my-custom/emacs-custom.el") ; custom emacs file
@@ -18,9 +18,9 @@
 (load-library "03-my-defun")
 (load-library "04-my-ibuffer")
 (load-library "05-my-keys")
-;; (load-library "06-my-projectile")
+(load-library "06-my-projectile")
 ;; (load-library "06-my-ruby")
-;; (load-library "10-my-performance")
+(load-library "10-my-performance")
 
 (load-library custom-file) ; load custom file defined above
 

@@ -15,12 +15,13 @@
    (insert (format "%s\n" "============================================================================================================================="))
    (insert (format "%50s  %-10s %-60s\n" "calife-help" "" "Print help for calife-* functions <califerno@gmail.com>"))
    (insert (format "%50s  %-10s %-60s\n" "calife-grep-selected" "C-S-f" "Grep selected text into current directory"))
-   (insert (format "%50s  %-10s %-60s\n" "calife-comment-or-uncomment-eclipse" "" ""))
+   (insert (format "%50s  %-10s %-60s\n" "calife-comment-or-uncomment-eclipse" "C-S-c" ""))
    (insert (format "%50s  %-10s %-60s\n" "calife-region-info" "" "Sample code to show region begin/end positions."))
    (insert (format "%50s  %-10s %-60s\n" "calife-is-region-active" "" "Print whether region is active."))
    (insert (format "%50s  %-10s %-60s\n" "calife-upcase-region-or-word" "C-x C-y" "upcase current word or region."))
    (insert (format "%50s  %-10s %-60s\n" "calife-downcase-region-or-word" "C-x C-x"  "downcase current word or region."))
    (insert (format "%50s  %-10s %-60s\n" "calife-camel-region-or-word" "C-x C-z" "Camel current word or region(Still in development)."))
+   (insert (format "%50s  %-10s %-60s\n" "calife-delete-blank-lines" "C-S-Canc" "Delete multiple blank lines on selection."))
    (insert (format "%s\n" "============================================================================================================================="))
    (insert (format "%s\n" ""))
    (insert (format "%s\n" ""))
@@ -395,6 +396,88 @@
   ;; current word, or current text selection if exist.
   (capitalize-region pos1 pos2)
   ))
+
+
+(defun calife-delete-blank-lines ()
+  "Delete multiple empty lines in selection."
+      (interactive)
+      (let ((start (line-beginning-position))
+            (end (line-end-position)))
+        (when (or (not transient-mark-mode) (region-active-p))
+          (setq start (save-excursion
+                        (goto-char (region-beginning))
+                        (beginning-of-line)
+                        (point))
+                end (save-excursion
+                      (goto-char (region-end))
+                      (end-of-line)
+                      (point))))
+	  (flush-lines "^[[:space:]]*$" start end)))
+	
+
+
+;; (defun shell-command-on-region-or-line ()
+;;   "Run selected text in a terminal or use the current line."
+;;   (interactive)
+;;   (shell-command
+;;    (concat
+
+;;     ;; pick one!
+;;     "gnome-terminal -e "
+;;     ; "roxterm --tab -e "
+;;     ; "terminator -x "
+
+;;     (if (use-region-p)
+;;         ;; current selection
+;;         (buffer-substring (region-beginning) (region-end))
+;;         ;; current line
+;;         (thing-at-point 'line t)))))
+
+;;
+;; Openshift custom functions
+;;
+
+(defun calife-oc-login ()
+  "Openshift login using CDP credential."
+  (interactive)
+  (shell-command
+   (concat "~/bin/" "oc-login")))
+
+(defun calife-oc-get-projects()
+  "Openshift get all project."
+  (interactive)
+  (shell-command
+   (concat "~/bin/" "oc-get-projects")))
+
+(defun calife-oc-set-project ()
+  "Openshift set openshift project."
+  (interactive)
+  (shell-command
+   (concat "~/bin/" "oc-set-project " (read-string "Enter project name:"))))
+
+(defun calife-oc-current-project()
+  "Openshift get current project."
+  (interactive)
+  (shell-command
+   (concat "~/bin/" "oc-current-project")))
+
+(defun calife-oc-get-pods()
+  "Openshift get CDP pods for current project."
+  (interactive)
+  (shell-command
+   (concat "~/bin/" "oc-get-pods")))
+
+(defun calife-oc-view-log()
+  "Openshift follow CDP log for a given pod."
+  (interactive)
+  (shell-command
+   (concat "~/bin/" "oc-view-log" " " (read-string "Enter pod name:"))))
+
+(defun calife-oc-download-log()
+  "Openshift get CDP log for a given pod."
+  (interactive)
+  (shell-command
+   (concat "~/bin/" "oc-download-log" " " (read-string "Enter pod name:"))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                             End custom functions
