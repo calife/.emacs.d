@@ -27,7 +27,7 @@
   * 3- Remove or backup any previous ~/.emacs file
 
   * 4- Clean .elc and recompile
-`	cd .emacs.d/other-parts/
+`	cd ~/.emacs.d/other-parts/ ;
 	find . -name '*.elc' -exec rm -f '{}' \;
 	emacs --batch --eval "(byte-recompile-directory \"elpa/\" 0)"
 	
