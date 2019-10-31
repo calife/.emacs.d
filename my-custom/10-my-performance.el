@@ -15,4 +15,5 @@
 		(setq irony-server-w32-pipe-buffer-size (* 64 1024)))
 	  ))
 
+
 ;; End performance tuning

@@ -34,23 +34,6 @@
   (sp-local-pair "<" ">")
   (sp-local-pair "<%" "%>"))
 
-;; (require 'highlight-indentation)
-;; (add-hook 'ruby-mode-hook
-;; 		  (lambda () (highlight-indentation-current-column-mode)))
-;; (set-face-background 'highlight-indentation-face "#e3e3d3")
-;; (set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
-
-;; (yas-global-mode)
-
-
-;; (require 'projectile)
-;; (projectile-global-mode)
-;; (setq projectile-enable-caching t)
-;; ;; Press Command-p for fuzzy find in project
-;; (global-set-key (kbd "s-p") 'projectile-find-file)
-;; ;; Press Command-b for fuzzy switch buffer
-;; (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
-
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook
 		  (lambda ()

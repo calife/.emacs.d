@@ -7,6 +7,9 @@
 
 (message "Loading 05-my-keys.el")
 
+;; (global-set-key "\C-c\C-r" 'recentf-open-files)
+(global-set-key (kbd "C-c C-r") 'recentf-open-files)
+
 ;; Prevent accidentally killing emacs.
 (global-set-key [(control x) (control c)]
 		'(lambda ()
@@ -58,20 +61,16 @@
 (global-set-key "\M-g" 'goto-line)
 
 ;; Frame sesize
-(global-set-key (kbd "S-<up>") (lambda () (interactive) (shrink-window 5)))
-(global-set-key (kbd "S-<down>") (lambda () (interactive) (enlarge-window 5)))
-(global-set-key (kbd "S-<left>") (lambda () (interactive) (shrink-window-horizontally 5)))
-(global-set-key (kbd "S-<right>") (lambda () (interactive) (enlarge-window-horizontally 5)))
+(global-set-key (kbd "C-M-<up>") (lambda () (interactive) (shrink-window 5)))
+(global-set-key (kbd "C-M-<down>") (lambda () (interactive) (enlarge-window 5)))
+(global-set-key (kbd "C-M-<left>") (lambda () (interactive) (shrink-window-horizontally 5)))
+(global-set-key (kbd "C-M-<right>") (lambda () (interactive) (enlarge-window-horizontally 5)))
 
 ;; Multi window layout
-;; (global-set-key (kbd "<M-C-prior>" ) 'scroll-other-window-up)
-;; (global-set-key (kbd "<M-C-next>" ) 'scroll-other-window-down)
 (global-set-key (kbd "<M-f2>") 'split-window-below)
 (global-set-key (kbd "<M-f3>") 'split-window-right)
 (global-set-key (kbd "<M-f4>") 'kill-buffer-and-window)
 (global-set-key (kbd "<M-f5>") 'delete-other-windows)
-;; (global-set-key [C-M-next]  'next-buffer)
-;; (global-set-key [C-M-prior]  'previous-buffer)
 
 ; Cycle throw windows
 (global-set-key [C-tab] (lambda () (interactive) (other-window +1)))

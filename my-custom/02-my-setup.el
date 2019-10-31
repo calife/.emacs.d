@@ -12,6 +12,11 @@
 ; scratch buffer initial message
 (setq inhibit-splash-screen t)
 
+(when window-system
+  (tool-bar-mode 0)
+  (scroll-bar-mode 0)
+  (tooltip-mode 1))
+
 (put 'upcase-region 'disabled nil)
 
 ;; Changes all yes/no questions to y/n type
@@ -30,13 +35,15 @@
 )
 
 ;; Salva la posizione del cursore per ciascun file aperto
-(require 'saveplace)
-(setq-default save-place t)
 (setq save-place-file "~/.emacs.d/saved-places")
+(setq save-place-forget-unreadable-files nil) ; If emacs is slow to exit after enabling saveplace
+(save-place-mode)
 
 (require 'recentf)
+(setq recentf-max-saved-items 1000
+      recentf-exclude '("/tmp/" "/ssh:"))
 (recentf-mode 1)
-(global-set-key "\C-c\C-r" 'recentf-open-files)
+
 
 (setq-default truncate-lines t)
 
@@ -49,8 +56,6 @@
 (require 'linum)
 (global-linum-mode)
 (line-number-mode 1) ; abilita il line number mode
-
-(scroll-bar-mode -1)
 
 ;; Aggiustamenti per mouse e scroll
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
@@ -98,6 +103,10 @@
 
 ;; facilita il copia incolla dal clipboard del window manager
 (setq x-select-enable-clipboard t)
+(setq x-select-enable-clipboard-manager nil)
+;; Navigate between windows using Alt-1, Alt-2, Shift-left, shift-up, shift-right
+(windmove-default-keybindings)
+
 ;; windows
 ;; (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 (if (eq system-type 'gnu-linux) (setq interprogram-paste-function 'x-cut-buffer-or-selection-value) )
@@ -120,9 +129,6 @@
 (add-hook 'css-mode-hook (lambda () (rainbow-mode 1)))
 (add-hook 'html-mode-hook (lambda () (rainbow-mode 1)))
 (add-hook 'help-mode-hook (lambda () (rainbow-mode 1)))
-
-(setq x-select-enable-clipboard-manager nil)
-
 
 
 
@@ -173,8 +179,6 @@
         ("\\.bz2\\'" "" "bunzip2")
         ("\\.tar\\'" ".tgz" nil)))
 
-
-(tool-bar-mode -1)
 
 (message "Loaded 02-my-setup")
 
