@@ -61,10 +61,10 @@
 (global-set-key "\M-g" 'goto-line)
 
 ;; Frame sesize
-(global-set-key (kbd "C-M-<up>") (lambda () (interactive) (shrink-window 5)))
-(global-set-key (kbd "C-M-<down>") (lambda () (interactive) (enlarge-window 5)))
-(global-set-key (kbd "C-M-<left>") (lambda () (interactive) (shrink-window-horizontally 5)))
-(global-set-key (kbd "C-M-<right>") (lambda () (interactive) (enlarge-window-horizontally 5)))
+(global-set-key (kbd "C-S-<up>") (lambda () (interactive) (shrink-window 5)))
+(global-set-key (kbd "C-S-<down>") (lambda () (interactive) (enlarge-window 5)))
+(global-set-key (kbd "C-S-<left>") (lambda () (interactive) (shrink-window-horizontally 5)))
+(global-set-key (kbd "C-S-<right>") (lambda () (interactive) (enlarge-window-horizontally 5)))
 
 ;; Multi window layout
 (global-set-key (kbd "<M-f2>") 'split-window-below)
