@@ -2,6 +2,8 @@
 ;; Start Windows performance tweaks (it really works!!!)
 ;;
 
+(message "Loading 10-my-performance.el")
+
 (setq *win32* (eq system-type 'windows-nt) )
 
 (if *win32*
@@ -17,3 +19,5 @@
 
 
 ;; End performance tuning
+
+(message "Loaded 10-my-performance.el")

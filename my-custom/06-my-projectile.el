@@ -1,3 +1,6 @@
+
+(message "Loading 06-my-projectile")
+
 ;; To enable pojectile management create an empty .projectile file under project directory
 (require 'projectile)
 ;; (projectile-mode)
@@ -12,3 +15,5 @@
 (define-key projectile-mode-map (kbd "C-S-f") 'projectile-grep)
 
 ;; C-p p C-h  ; to show keybinding
+
+(message "Loaded 06-my-projectile")
