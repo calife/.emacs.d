@@ -132,27 +132,27 @@
 
 
 
-(if *win32*
-	;; cygwin setup under windows
-	(progn
-	  (message "Running on Windows")
+;; (if *win32*
+;; 	;; cygwin setup under windows
+;; 	(progn
+;; 	  (message "Running on Windows")
 
-	  ;; cygwin root under other directory will not work
-	  (setq cygwin-mount-cygwin-bin-directory "c:/cygwin/bin")
+;; 	  ;; cygwin root under other directory will not work
+;; 	  (setq cygwin-mount-cygwin-bin-directory "c:/cygwin/bin")
 
-	  (require 'setup-cygwin)
-	  (cygwin-mount-activate)
-	  (message "Cygwin mount activated")
+;; 	  (require 'setup-cygwin)
+;; 	  (cygwin-mount-activate)
+;; 	  (message "Cygwin mount activated")
 	  
-	  (setenv "PATH"
-			  (concat
-			   "/usr/local/bin" ";"
-			   "/usr/bin" ";"
-			   "/bin" ";"
-			   "/sbin" ";"
-			   "/usr/sbin" ";"		   
-			   (getenv "PATH") ";" ))
-	  (message "Updated PATH variable")))
+;; 	  (setenv "PATH"
+;; 			  (concat
+;; 			   "/usr/local/bin" ";"
+;; 			   "/usr/bin" ";"
+;; 			   "/bin" ";"
+;; 			   "/sbin" ";"
+;; 			   "/usr/sbin" ";"		   
+;; 			   (getenv "PATH") ";" ))
+;; 	  (message "Updated PATH variable")))
 
 (if *gnu/linux*
 	(progn
@@ -179,6 +179,8 @@
         ("\\.bz2\\'" "" "bunzip2")
         ("\\.tar\\'" ".tgz" nil)))
 
+
+(require 'multi-term)
 
 (message "Loaded 02-my-setup")
 

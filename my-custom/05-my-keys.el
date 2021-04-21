@@ -80,7 +80,7 @@
 (global-set-key [f12]
 				'(lambda ()
 				   (interactive)
-				   (ansi-term (getenv "SHELL") "Calife Term ©")
+				   (multi-term)
 				   ))
 
 

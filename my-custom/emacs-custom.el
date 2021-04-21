@@ -84,7 +84,7 @@
 	("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-	(org-pomodoro zenburn-theme yasnippet yaml-mode xterm-color vagrant smartparens ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile project-explorer markdown-mode hl-line+ highlight-indentation helm-dash git-gutter flymake-ruby flycheck drag-stuff dired-single dired-rainbow cygwin-mount color-theme codesearch ag ac-inf-ruby)))
+	(multi-term org-pomodoro zenburn-theme yasnippet yaml-mode xterm-color vagrant smartparens ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile project-explorer markdown-mode hl-line+ highlight-indentation helm-dash git-gutter flymake-ruby flycheck drag-stuff dired-single dired-rainbow cygwin-mount color-theme codesearch ag ac-inf-ruby)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(projectile-globally-ignored-files (quote ("TAGS" "*.elc")))
  '(vc-annotate-background "#2B2B2B")
