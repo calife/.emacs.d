@@ -123,7 +123,7 @@
 				("\\.md\\'" . markdown-mode))
 			  auto-mode-alist ))
 
-(yas-global-mode)
+;; (yas-global-mode)
 
 (require 'rainbow-mode)
 (add-hook 'css-mode-hook (lambda () (rainbow-mode 1)))

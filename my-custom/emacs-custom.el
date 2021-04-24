@@ -10,7 +10,9 @@
  '(custom-enabled-themes (quote (darcula)))
  '(custom-safe-themes
    (quote
-	("ef0f78ab3d097248acdbef675e41f8547b10bca8627498910de1db26f80ae4de" "95dfc5473272a6076dc3682fcd09625d46b13653a6cbb29dfb783babb1c93d92" "9ec826a31fb9202db980ab66dc8cf247b7a8853ef479fcfb7ce4da441802f2c4" "045aa4b75c2e1809c0a449835596349274138c3602dd8d23e2aed75e50bd1d09" default)))
+	("6a6b3ef89d10904acca7b30b3be87dc7143dcbabbf3390d410d03c40a49357d7" "d337012c000ee01c21ca38313499d079532a4694fd0a1c91d40750609b51face" "fb1e3e0fbe60ae7d93913fdbf67dd5f9214cd96318bbbe049d37b0126007ca61" "f4aebaa565cb217147e3ff09e01a2ccb52d9db9f3c14e978e6268176e1de8010" "13fb29e5208790894dafaa265a1455ea35af33638c80b6fc3515dd70949f1447" "3765dff6428055d0ce2a4fe3b259c7049ab304c22ec0de5adef16cf7097cff08" "e9305962c72505051265bc0e81c76db737673bf25c926444611f7e60793008e0" "24e66714b6f353484d118061d431ee57704423e86c2eb2da5b9e29023a1608a3" "28f116c2bdc6856270a2f0b40e937e3bee5e26d36073d1faf29a428ce0c3d778" "6e4060c261218a9500628eee07f4734087f12ca6a22cdf73e3c7603b4ddec521" "4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" "8eafb06bf98f69bfb86f0bfcbe773b44b465d234d4b95ed7fa882c99d365ebfd" "ef0f78ab3d097248acdbef675e41f8547b10bca8627498910de1db26f80ae4de" "95dfc5473272a6076dc3682fcd09625d46b13653a6cbb29dfb783babb1c93d92" "9ec826a31fb9202db980ab66dc8cf247b7a8853ef479fcfb7ce4da441802f2c4" "045aa4b75c2e1809c0a449835596349274138c3602dd8d23e2aed75e50bd1d09" default)))
+ '(dired-listing-switches "-l")
+ '(display-time-mode t)
  '(ensime-sem-high-faces
    (quote
 	((var :foreground "#9876aa" :underline
@@ -84,9 +86,10 @@
 	("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-	(multi-term org-pomodoro zenburn-theme yasnippet yaml-mode xterm-color vagrant smartparens ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile project-explorer markdown-mode hl-line+ highlight-indentation helm-dash git-gutter flymake-ruby flycheck drag-stuff dired-single dired-rainbow cygwin-mount color-theme codesearch ag ac-inf-ruby)))
+	(multi-term org-pomodoro zenburn-theme yaml-mode xterm-color smartparens ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile project-explorer markdown-mode hl-line+ highlight-indentation helm-dash git-gutter flymake-ruby flycheck drag-stuff dired-single dired-rainbow codesearch ag ac-inf-ruby)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(projectile-globally-ignored-files (quote ("TAGS" "*.elc")))
+ '(tool-bar-mode nil)
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
    (quote
@@ -117,5 +120,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#2B2B2B" :foreground "#a9b7c6" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant italic :weight normal :height 99 :width normal :foundry "1ASC" :family "Liberation Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#2B2B2B" :foreground "#a9b7c6" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "Bits" :family "Bitstream Vera Sans Mono"))))
  '(hl-line ((t (:foreground "azure")))))
