@@ -23,12 +23,10 @@
 				 (mode . emacs-lisp-mode)
 				 (mode . ruby-mode)
 				 (mode . lisp-mode)))
-			   ("Home"
-				(filename . "/home/mpucci"))
 			   ("Emacs"
 				(or (name . "^\\*scratch\\*$") (name . "^\\*Messages\\*$")))
 			   ("Terminal"
-				(mode . term-mode))
+				(mode . Term-mode))
 			   ("Mail"
 				(or  ;; mail-related buffers
 				 (mode . message-mode)

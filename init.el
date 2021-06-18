@@ -9,7 +9,7 @@
 
 (setq gc-cons-threshold (* 500 1024 1024))
 
-(toggle-debug-on-error)
+(setq debug-on-error 'nil)
 
 ;; (byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
 

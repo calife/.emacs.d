@@ -1,7 +1,8 @@
 
+(message "##################################################################")
+
 (message "Loading 02-my-setup")
 
-(setq *win32* (eq system-type 'windows-nt) )
 (setq *gnu/linux* (eq system-type 'gnu/linux) )
 
 ; Display date/time in the status bar
@@ -91,8 +92,6 @@
   )
 )
 
-(setq-default tab-width 4) ;; set tab width to 4 space
-
 ;; disable downcase warning message
 (put 'downcase-region 'disabled nil)
 
@@ -112,6 +111,11 @@
 (if (eq system-type 'gnu-linux) (setq interprogram-paste-function 'x-cut-buffer-or-selection-value) )
 (if (eq system-type 'windows-nt) (setq interprogram-paste-function 'x-selection-value) )
 
+;; 4 space indent in emacs
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-line-function 'insert-tab)
+
 ;;; Go into proper mode according to file extension
 (setq auto-mode-alist
 	  (append '(("\\.rb\\'" . ruby-mode)
@@ -129,30 +133,6 @@
 (add-hook 'css-mode-hook (lambda () (rainbow-mode 1)))
 (add-hook 'html-mode-hook (lambda () (rainbow-mode 1)))
 (add-hook 'help-mode-hook (lambda () (rainbow-mode 1)))
-
-
-
-;; (if *win32*
-;; 	;; cygwin setup under windows
-;; 	(progn
-;; 	  (message "Running on Windows")
-
-;; 	  ;; cygwin root under other directory will not work
-;; 	  (setq cygwin-mount-cygwin-bin-directory "c:/cygwin/bin")
-
-;; 	  (require 'setup-cygwin)
-;; 	  (cygwin-mount-activate)
-;; 	  (message "Cygwin mount activated")
-	  
-;; 	  (setenv "PATH"
-;; 			  (concat
-;; 			   "/usr/local/bin" ";"
-;; 			   "/usr/bin" ";"
-;; 			   "/bin" ";"
-;; 			   "/sbin" ";"
-;; 			   "/usr/sbin" ";"		   
-;; 			   (getenv "PATH") ";" ))
-;; 	  (message "Updated PATH variable")))
 
 (if *gnu/linux*
 	(progn
