@@ -22,6 +22,7 @@
 				 (mode . c-mode)
 				 (mode . emacs-lisp-mode)
 				 (mode . ruby-mode)
+				 (mode . java-mode)         
 				 (mode . lisp-mode)))
 			   ("Emacs"
 				(or (name . "^\\*scratch\\*$") (name . "^\\*Messages\\*$")))

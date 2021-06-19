@@ -418,23 +418,6 @@
 	
 
 
-;; (defun shell-command-on-region-or-line ()
-;;   "Run selected text in a terminal or use the current line."
-;;   (interactive)
-;;   (shell-command
-;;    (concat
-
-;;     ;; pick one!
-;;     "gnome-terminal -e "
-;;     ; "roxterm --tab -e "
-;;     ; "terminator -x "
-
-;;     (if (use-region-p)
-;;         ;; current selection
-;;         (buffer-substring (region-beginning) (region-end))
-;;         ;; current line
-;;         (thing-at-point 'line t)))))
-
 ;;
 ;; Openshift custom functions
 ;;

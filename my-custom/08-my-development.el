@@ -36,12 +36,12 @@
 
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook
-		  (lambda ()
-			(define-key shell-mode-map (kbd "<M-up>") 'comint-previous-input)
-			(define-key shell-mode-map (kbd "<M-down>") 'comint-next-input)
-			(ansi-color-for-comint-mode-on)
-			)
-		  )
+          (lambda ()
+            (define-key shell-mode-map (kbd "<M-up>") 'comint-previous-input)
+            (define-key shell-mode-map (kbd "<M-down>") 'comint-next-input)
+            (ansi-color-for-comint-mode-on)
+            )
+          )
 
 (add-hook 'comint-mode-hook 'ansi-color-for-comint-mode-on)
 
@@ -72,5 +72,3 @@
 (add-hook 'ruby-mode-hook
           (lambda () (local-set-key (kbd "<escape>") 'hs-toggle-hiding)))
 
-
-(global-set-key [f10] 'project-explorer-toggle)

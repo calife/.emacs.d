@@ -1,6 +1,4 @@
 
-(message "##################################################################")
-
 (message "Loading 02-my-setup")
 
 (setq *gnu/linux* (eq system-type 'gnu/linux) )
@@ -159,6 +157,9 @@
         ("\\.bz2\\'" "" "bunzip2")
         ("\\.tar\\'" ".tgz" nil)))
 
+
+;; neotree
+;;(require 'neotree)
 
 (require 'multi-term)
 

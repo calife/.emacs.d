@@ -16,4 +16,10 @@
 
 ;; C-p p C-h  ; to show keybinding
 
+;; (setq neo-smart-open t)
+;; (setq projectile-switch-project-action 'neotree-projectile-action)
+
+(setq projectile-switch-project-action 'project-explorer-open) 
+(global-set-key [f8] 'project-explorer-open)
+
 (message "Loaded 06-my-projectile")

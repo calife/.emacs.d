@@ -7,7 +7,6 @@
 
 (message "Loading 05-my-keys.el")
 
-;; (global-set-key "\C-c\C-r" 'recentf-open-files)
 (global-set-key (kbd "C-c C-r") 'recentf-open-files)
 
 ;; Prevent accidentally killing emacs.
@@ -38,7 +37,6 @@
 (global-set-key (kbd "C-c t") 'toggle-truncate-lines)
 (global-set-key (kbd "<M-S-return>" ) 'my-toggle-fullscreen)
 (global-set-key (kbd "%") 'my-match-paren) ; matching delle parentesi in stile VI
-;; (global-set-key (kbd "<C-S-delete>") 'just-one-space-in-region) ; remove multiple whitespaces in buffer
 (global-set-key (kbd "<C-S-delete>") 'calife-delete-blank-lines) ; remove multiple empty lines
 (global-set-key (kbd "\M-%") 'query-replace)
 (global-set-key [up] "\C-p")
@@ -96,6 +94,12 @@
 (global-set-key (kbd "<left-margin> <down-mouse-1>") 'md-select-linum)
 (global-set-key (kbd "<left-margin> <mouse-1>") 'mu-select-linum)
 (global-set-key (kbd "<left-margin> <drag-mouse-1>") 'mu-select-linum)
+
+; Font increase/decrease
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+(global-set-key [C-mouse-4] 'text-scale-increase)
+(global-set-key [C-mouse-5] 'text-scale-decrease)
 
 ;; Execute text in a terminal, no questions! (ctrl-alt-shift-enter to avoid accidents!)
 ;; (global-set-key (kbd "<C-M-return>") 'term-shell-command-on-region-or-line)

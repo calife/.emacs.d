@@ -7,9 +7,9 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(setq gc-cons-threshold (* 500 1024 1024))
+;; (setq gc-cons-threshold (* 500 1024 1024))
 
-(setq debug-on-error 'nil)
+(setq debug-on-error t)
 
 ;; (byte-recompile-directory (expand-file-name "~/.emacs.d") 0)
 
@@ -35,4 +35,4 @@
   (load custom-file)) 
 
 ;; Garbage collector - decrease threshold to 5 MB
-(add-hook 'after-init-hook (lambda () (setq gc-cons-threshold (* 5 1024 1024))))
+;; (add-hook 'after-init-hook (lambda () (setq gc-cons-threshold (* 5 1024 1024))))

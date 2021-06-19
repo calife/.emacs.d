@@ -80,13 +80,19 @@
         (mode . idl-mode)
         (mode . lisp-mode)))))))
  '(indent-tabs-mode nil)
+ '(neo-cwd-line-style (quote button))
+ '(neo-force-change-root t)
+ '(neo-smart-open nil)
+ '(neo-window-width 35)
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (multi-term org-pomodoro zenburn-theme yaml-mode xterm-color smartparens ruby-tools ruby-refactor ruby-electric ruby-block robe rainbow-mode projectile project-explorer markdown-mode hl-line+ highlight-indentation helm-dash git-gutter flymake-ruby flycheck drag-stuff dired-single dired-rainbow codesearch ag ac-inf-ruby)))
+    (project-explorer multi-term zenburn-theme yaml-mode xterm-color smartparens rainbow-mode projectile markdown-mode hl-line+ highlight-indentation git-gutter dired-single dired-rainbow)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
+ '(pe/cache-directory "~/.emacs.d/project-explorer-cache/")
+ '(pe/omit-regex nil)
  '(projectile-globally-ignored-files (quote ("TAGS" "*.elc")))
  '(standard-indent 2)
  '(tab-always-indent nil)
@@ -123,4 +129,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#2B2B2B" :foreground "#a9b7c6" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
- '(hl-line ((t (:foreground "azure")))))
+ '(hl-line ((t (:foreground "azure"))))
+ '(neo-root-dir-face ((t (:foreground "chocolate" :weight bold)))))
